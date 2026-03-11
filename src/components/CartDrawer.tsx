@@ -13,7 +13,8 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
   const { items, isLoading, isSyncing, updateQuantity, removeItem, getCheckoutUrl, syncCart } = useCartStore();
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
-  const currencyCode = items[0]?.price.currencyCode || "£";
+
+  const formatCurrency = (amount: number) => `£${amount.toFixed(2)}`;
 
   useEffect(() => {
     if (open) syncCart();
@@ -131,7 +132,7 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
                           </div>
                           {/* Price */}
                           <p className="font-body text-sm font-medium text-foreground">
-                            {item.price.currencyCode} {(parseFloat(item.price.amount) * item.quantity).toFixed(2)}
+                            {formatCurrency(parseFloat(item.price.amount) * item.quantity)}
                           </p>
                         </div>
                       </div>
@@ -145,7 +146,7 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
                 <div className="flex justify-between items-baseline">
                   <span className="font-heading text-lg font-light">Subtotal</span>
                   <span className="font-heading text-xl font-medium">
-                    {currencyCode} {totalPrice.toFixed(2)}
+                    {formatCurrency(totalPrice)}
                   </span>
                 </div>
                 <p className="font-body text-[11px] text-muted-foreground tracking-wide">
