@@ -43,7 +43,14 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     <Link to={`/product/${node.handle}`} className="group block">
       {/* Image with hover swap */}
       <div className="aspect-[3/4] bg-muted/30 overflow-hidden mb-5 relative">
-        {firstImage ? (
+        {overrideImage ? (
+          <img
+            src={overrideImage}
+            alt={node.title}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+        ) : firstImage ? (
           <>
             <img
               src={firstImage.url}
