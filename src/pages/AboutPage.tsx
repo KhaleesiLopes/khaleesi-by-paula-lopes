@@ -2,14 +2,14 @@ import aboutBrand from "@/assets/about-brand.jpg";
 
 const AboutPage = () => {
   return (
-    <main className="pt-24 pb-20">
+    <main className="pt-24 pb-12">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h1 className="heading-display text-4xl md:text-5xl text-foreground mb-4">About Khaleesi</h1>
           <div className="w-16 h-px bg-primary mx-auto mt-4" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto mb-20">
+        <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto mb-12">
           <div>
             <h2 className="heading-serif text-2xl text-foreground mb-6">Our Story</h2>
             <p className="body-elegant text-muted-foreground mb-4">
