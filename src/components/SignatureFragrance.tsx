@@ -4,16 +4,17 @@ import signatureImg from "@/assets/signature-fragrance.jpg";
 export const SignatureFragrance = () => {
   return (
     <section className="bg-background">
-      <div className="grid md:grid-cols-2 items-stretch">
-        {/* Image — full bleed */}
-        <div className="relative min-h-[450px] md:min-h-[550px] lg:min-h-[600px] overflow-hidden">
-          <img
-            src={signatureImg}
-            alt="Khaleesi Signature Fragrance"
-            className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
-            loading="lazy"
-          />
-        </div>
+      <div className="container mx-auto px-6 lg:px-12 py-12 lg:py-16">
+        <div className="grid md:grid-cols-2 items-stretch">
+          {/* Image */}
+          <div className="relative min-h-[450px] md:min-h-[550px] lg:min-h-[600px] overflow-hidden">
+            <img
+              src={signatureImg}
+              alt="Khaleesi Signature Fragrance"
+              className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
+              loading="lazy"
+            />
+          </div>
 
         {/* Copy */}
         <div className="flex items-center px-8 lg:px-16 py-12 lg:py-16">
@@ -41,6 +42,7 @@ export const SignatureFragrance = () => {
               Discover the Scent
             </Link>
           </div>
+        </div>
         </div>
       </div>
     </section>
