@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import khaleesiLogo from "@/assets/khaleesi-logo.png";
 import { ShoppingBag, User, Menu, X } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 
@@ -89,7 +88,7 @@ export const Header = ({ onCartOpen }: HeaderProps) => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={khaleesiLogo} alt="Khaleesi" className="h-8 lg:h-10 w-auto" />
+            <span className="font-heading text-2xl lg:text-3xl tracking-[0.15em] uppercase text-foreground">Khaleesi</span>
           </Link>
 
           {/* Right nav — desktop */}
