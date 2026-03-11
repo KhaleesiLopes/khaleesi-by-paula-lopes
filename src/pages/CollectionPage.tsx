@@ -2,7 +2,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { useShopifyProducts } from "@/hooks/useShopifyProducts";
 import { ProductCard } from "@/components/ProductCard";
 import { Loader2 } from "lucide-react";
-import womensImg from "@/assets/womens-fragrance.jpg";
+import womensImg from "@/assets/khaleesi-model.png";
 import mensImg from "@/assets/khal-model-1.png";
 import categoryFragrance from "@/assets/category-fragrance.jpg";
 import categoryMakeup from "@/assets/category-makeup.jpg";
@@ -80,26 +80,29 @@ const CollectionPage = () => {
 
   return (
     <main className="pt-0 pb-0">
-      {/* Collection Hero */}
-      <section className="relative h-[50vh] min-h-[350px] lg:h-[60vh] overflow-hidden">
-        <img
-          src={heroImage}
-          alt={displayTitle}
-          className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-foreground/20 to-foreground/10" />
-        <div className="relative h-full flex items-end">
-          <div className="container mx-auto px-6 lg:px-12 pb-12 lg:pb-16">
-            <p className="font-body text-xs tracking-[0.35em] uppercase text-background/70 mb-3">
+      {/* Collection Hero — split layout */}
+      <section className="relative grid md:grid-cols-2 min-h-[400px] lg:min-h-[500px] bg-foreground">
+        {/* Text panel */}
+        <div className="flex items-end p-8 lg:p-16 pb-12 lg:pb-16 order-2 md:order-1">
+          <div>
+            <p className="font-body text-xs tracking-[0.35em] uppercase text-background/60 mb-3">
               {gender ? "Shop" : "Explore"}
             </p>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-background mb-3">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-background mb-4">
               {displayTitle}
             </h1>
-            <p className="font-body text-sm font-light tracking-wide text-background/80 max-w-md">
+            <p className="font-body text-sm font-light tracking-wide text-background/70 max-w-sm">
               {displayDesc}
             </p>
           </div>
+        </div>
+        {/* Image panel */}
+        <div className="relative min-h-[300px] md:min-h-full order-1 md:order-2 overflow-hidden">
+          <img
+            src={heroImage}
+            alt={displayTitle}
+            className="absolute inset-0 w-full h-full object-cover object-top"
+          />
         </div>
       </section>
 
