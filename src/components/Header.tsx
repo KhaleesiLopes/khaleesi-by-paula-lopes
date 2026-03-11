@@ -89,7 +89,7 @@ export const Header = ({ onCartOpen }: HeaderProps) => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={khaleesiLogo} alt="Khaleesi" className="h-6 lg:h-8 w-auto" />
+            <img src={khaleesiLogo} alt="Khaleesi" className="h-8 lg:h-10 w-auto" />
           </Link>
 
           {/* Right nav — desktop */}
