@@ -40,13 +40,13 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Link to={`/product/${node.handle}`} className="group block">
       {/* Image with hover swap */}
-      <div className="aspect-[3/4] bg-card rounded overflow-hidden mb-5 relative">
+      <div className="aspect-square bg-card rounded overflow-hidden mb-5 relative">
         {firstImage ? (
           <>
             <img
               src={firstImage.url}
               alt={firstImage.altText || node.title}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+              className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
                 secondImage ? "group-hover:opacity-0" : ""
               }`}
               loading="lazy"
@@ -55,7 +55,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
               <img
                 src={secondImage.url}
                 alt={secondImage.altText || node.title}
-                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 loading="lazy"
               />
             )}
@@ -83,7 +83,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         {node.title}
       </h3>
       <p className="font-body text-sm text-muted-foreground">
-        {price.currencyCode} {parseFloat(price.amount).toFixed(2)}
+        £{parseFloat(price.amount).toFixed(2)}
       </p>
 
       {/* Mobile Add to Bag (visible only on touch devices) */}
