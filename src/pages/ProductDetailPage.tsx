@@ -118,8 +118,7 @@ const ProductDetailPage = () => {
               {node.title}
             </h1>
             <p className="font-heading text-2xl font-light text-foreground mb-8">
-              {selectedVariant?.price.currencyCode}{" "}
-              {parseFloat(selectedVariant?.price.amount || "0").toFixed(2)}
+              £{parseFloat(selectedVariant?.price.amount || "0").toFixed(2)}
             </p>
 
             <div className="w-12 h-px bg-primary mb-8" />
