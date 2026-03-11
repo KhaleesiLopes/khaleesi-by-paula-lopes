@@ -132,7 +132,7 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
                           </div>
                           {/* Price */}
                           <p className="font-body text-sm font-medium text-foreground">
-                            {item.price.currencyCode} {(parseFloat(item.price.amount) * item.quantity).toFixed(2)}
+                            {formatCurrency(parseFloat(item.price.amount) * item.quantity)}
                           </p>
                         </div>
                       </div>
