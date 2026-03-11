@@ -55,7 +55,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
               <img
                 src={secondImage.url}
                 alt={secondImage.altText || node.title}
-                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 loading="lazy"
               />
             )}
