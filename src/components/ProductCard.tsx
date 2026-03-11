@@ -46,7 +46,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             <img
               src={firstImage.url}
               alt={firstImage.altText || node.title}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+              className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
                 secondImage ? "group-hover:opacity-0" : ""
               }`}
               loading="lazy"
