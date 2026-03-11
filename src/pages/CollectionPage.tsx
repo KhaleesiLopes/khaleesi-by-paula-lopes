@@ -3,7 +3,7 @@ import { useShopifyProducts } from "@/hooks/useShopifyProducts";
 import { ProductCard } from "@/components/ProductCard";
 import { Loader2 } from "lucide-react";
 import womensImg from "@/assets/womens-fragrance.jpg";
-import mensImg from "@/assets/mens-fragrance.jpg";
+import mensImg from "@/assets/khal-model-1.png";
 import categoryFragrance from "@/assets/category-fragrance.jpg";
 import categoryMakeup from "@/assets/category-makeup.jpg";
 import categorySkincare from "@/assets/category-skincare.jpg";
