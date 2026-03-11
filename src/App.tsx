@@ -20,7 +20,21 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   const [cartOpen, setCartOpen] = useState(false);
+  const items = useCartStore(state => state.items);
+  const prevItemCount = useRef(items.length);
+  const autoCloseTimer = useRef<ReturnType<typeof setTimeout>>();
   useCartSync();
+
+  // Auto-open cart when items are added, auto-close after 3s
+  useEffect(() => {
+    if (items.length > prevItemCount.current) {
+      setCartOpen(true);
+      clearTimeout(autoCloseTimer.current);
+      autoCloseTimer.current = setTimeout(() => setCartOpen(false), 3000);
+    }
+    prevItemCount.current = items.length;
+    return () => clearTimeout(autoCloseTimer.current);
+  }, [items.length]);
 
   return (
     <>
