@@ -133,7 +133,6 @@ const CollectionPage = () => {
             </p>
           </div>
         )}
-        )}
 
         {products && products.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12 lg:gap-x-8 lg:gap-y-16">
