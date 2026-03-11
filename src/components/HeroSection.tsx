@@ -21,7 +21,7 @@ export const HeroSection = () => {
           </p>
           <Link
             to="/collection/fragrance"
-            className="inline-block px-12 py-4 bg-[hsl(35,30%,65%)] text-white text-xs font-body font-medium tracking-[0.25em] uppercase transition-all hover:bg-[hsl(35,30%,55%)] animate-fade-in"
+            className="inline-block px-12 py-4 bg-[hsl(35,30%,55%)] text-white text-xs font-body font-medium tracking-[0.25em] uppercase transition-all hover:bg-[hsl(35,30%,45%)] animate-fade-in"
             style={{ animationDelay: "0.3s" }}
           >
             Shop Fragrance
