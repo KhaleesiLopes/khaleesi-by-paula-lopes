@@ -5,6 +5,7 @@ import { FeaturedProducts } from "@/components/FeaturedProducts";
 import { SignatureFragrance } from "@/components/SignatureFragrance";
 import { BrandGallery } from "@/components/BrandGallery";
 import { AboutSection } from "@/components/AboutSection";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <SignatureFragrance />
       <BrandGallery />
       <AboutSection />
+      <NewsletterSignup />
     </main>
   );
 };
