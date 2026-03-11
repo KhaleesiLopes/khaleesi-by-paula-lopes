@@ -135,7 +135,12 @@ const CollectionPage = () => {
         )}
 
         {products && products.length > 0 && (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12 lg:gap-x-8 lg:gap-y-16">
+          <div className={`grid gap-x-6 gap-y-12 lg:gap-x-8 lg:gap-y-16 ${
+            products.length === 1 ? "grid-cols-1 max-w-sm mx-auto" :
+            products.length === 2 ? "grid-cols-2 max-w-2xl mx-auto" :
+            products.length === 3 ? "grid-cols-2 md:grid-cols-3 max-w-4xl mx-auto" :
+            "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+          }`}>
             {products.map(product => (
               <ProductCard key={product.node.id} product={product} />
             ))}
