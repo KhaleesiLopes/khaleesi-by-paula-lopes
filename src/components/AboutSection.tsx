@@ -13,7 +13,7 @@ export const AboutSection = () => {
             <p className="font-body text-base font-light leading-relaxed tracking-wide text-muted-foreground mb-6">
               Khaleesi was founded on the belief that fragrance is the most intimate form of self-expression. Every bottle we craft is a love letter to confidence, femininity, and unapologetic beauty.
             </p>
-            <p className="font-body text-base font-light leading-relaxed tracking-wide text-muted-foreground mb-10">
+            <p className="font-body text-base font-light leading-relaxed tracking-wide text-muted-foreground mb-8">
               From sourcing the world's rarest ingredients to designing each detail by hand, we pour artistry into every drop.
             </p>
             <Link

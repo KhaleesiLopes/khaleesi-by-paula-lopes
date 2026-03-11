@@ -62,7 +62,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border pt-10 text-center">
+        <div className="border-t border-border pt-8 text-center">
           <p className="font-heading text-2xl tracking-wider text-foreground mb-3">Khaleesi</p>
           <p className="text-xs font-body font-light text-muted-foreground tracking-wide">
             © {new Date().getFullYear()} Khaleesi. All rights reserved.

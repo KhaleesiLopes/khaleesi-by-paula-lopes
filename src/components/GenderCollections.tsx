@@ -6,7 +6,7 @@ export const GenderCollections = () => {
   return (
     <section className="bg-card">
       <div className="container mx-auto px-6 lg:px-12 py-12 lg:py-16">
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-5">
           {/* Women's */}
           <Link
             to="/collection/fragrance?gender=women"

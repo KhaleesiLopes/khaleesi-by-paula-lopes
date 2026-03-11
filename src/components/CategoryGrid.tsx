@@ -18,7 +18,7 @@ export const CategoryGrid = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {categories.map(cat => (
             <Link key={cat.label} to={cat.to} className="group text-center">
-              <div className="aspect-square overflow-hidden rounded mb-4">
+              <div className="aspect-square overflow-hidden rounded mb-3">
                 <img
                   src={cat.image}
                   alt={cat.label}
