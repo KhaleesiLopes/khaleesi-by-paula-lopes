@@ -146,7 +146,7 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
                 <div className="flex justify-between items-baseline">
                   <span className="font-heading text-lg font-light">Subtotal</span>
                   <span className="font-heading text-xl font-medium">
-                    {currencyCode} {totalPrice.toFixed(2)}
+                    {formatCurrency(totalPrice)}
                   </span>
                 </div>
                 <p className="font-body text-[11px] text-muted-foreground tracking-wide">
