@@ -25,7 +25,7 @@ export const GenderCollections = () => {
               <h3 className="font-heading text-2xl md:text-3xl font-light text-white mb-4">
                 Women's Fragrance
               </h3>
-              <span className="inline-block px-8 py-3 bg-[hsl(35,30%,65%)] text-white text-xs font-body font-medium tracking-[0.2em] uppercase transition-all group-hover:bg-[hsl(35,30%,55%)]">
+              <span className="inline-block px-8 py-3 bg-[hsl(35,30%,55%)] text-white text-xs font-body font-medium tracking-[0.2em] uppercase transition-all group-hover:bg-[hsl(35,30%,45%)]">
                 Shop Women's Fragrance
               </span>
             </div>
