@@ -2,7 +2,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { useShopifyProducts } from "@/hooks/useShopifyProducts";
 import { ProductCard } from "@/components/ProductCard";
 import { Loader2 } from "lucide-react";
-import womensImg from "@/assets/khaleesi-model.png";
+import womensImg from "@/assets/womens-collection-hero.png";
 import mensImg from "@/assets/khal-model-1.png";
 import categoryFragrance from "@/assets/category-fragrance.jpg";
 import categoryMakeup from "@/assets/category-makeup.jpg";
