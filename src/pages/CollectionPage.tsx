@@ -107,7 +107,7 @@ const CollectionPage = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="container mx-auto px-6 lg:px-12 py-16 lg:py-24">
+      <section className="container mx-auto px-6 lg:px-12 py-10 lg:py-16">
         {/* Product count */}
         {!isLoading && products && (
           <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-12">
