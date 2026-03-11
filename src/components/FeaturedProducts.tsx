@@ -44,14 +44,6 @@ export const FeaturedProducts = () => {
                 <ProductCard key={product.node.id} product={product} />
               ))}
             </div>
-            <div className="text-center mt-16">
-              <Link
-                to="/collection/fragrance"
-                className="inline-block px-10 py-3.5 border border-foreground text-foreground text-xs font-body font-medium tracking-[0.25em] uppercase transition-all hover:bg-foreground hover:text-background"
-              >
-                View All Fragrances
-              </Link>
-            </div>
           </>
         )}
       </div>
