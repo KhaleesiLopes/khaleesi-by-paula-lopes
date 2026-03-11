@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import womensFragrance from "@/assets/womens-fragrance.jpg";
-import mensFragrance from "@/assets/mens-fragrance.jpg";
+import mensFragrance from "@/assets/khal-model-1.png";
 
 export const GenderCollections = () => {
   return (
