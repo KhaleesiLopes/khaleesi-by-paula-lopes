@@ -83,7 +83,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         {node.title}
       </h3>
       <p className="font-body text-sm text-muted-foreground">
-        {price.currencyCode} {parseFloat(price.amount).toFixed(2)}
+        £{parseFloat(price.amount).toFixed(2)}
       </p>
 
       {/* Mobile Add to Bag (visible only on touch devices) */}

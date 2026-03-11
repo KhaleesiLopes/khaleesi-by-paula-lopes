@@ -39,7 +39,7 @@ export const FeaturedProducts = () => {
 
         {products && products.length > 0 && (
           <>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {products.map(product => (
                 <ProductCard key={product.node.id} product={product} />
               ))}
