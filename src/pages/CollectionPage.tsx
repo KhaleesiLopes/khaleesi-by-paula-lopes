@@ -85,7 +85,7 @@ const CollectionPage = () => {
         <img
           src={heroImage}
           alt={displayTitle}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-foreground/20 to-foreground/10" />
         <div className="relative h-full flex items-end">
