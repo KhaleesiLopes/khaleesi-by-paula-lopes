@@ -10,9 +10,6 @@ export const FeaturedProducts = () => {
     <section className="bg-card">
       <div className="container mx-auto px-6 lg:px-12 py-24 lg:py-32">
         <div className="text-center mb-16">
-          <p className="font-body text-xs tracking-[0.35em] uppercase text-muted-foreground mb-4">
-            Curated Selection
-          </p>
           <h2 className="font-heading text-3xl md:text-4xl font-light tracking-wide text-foreground">
             Featured Fragrances
           </h2>
