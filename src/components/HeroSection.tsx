@@ -1,29 +1,37 @@
 import { Link } from "react-router-dom";
-import heroBanner from "@/assets/hero-banner.jpg";
+import heroPerfume from "@/assets/hero-perfume.jpg";
 
 export const HeroSection = () => {
   return (
-    <section className="relative h-[85vh] min-h-[600px] overflow-hidden">
+    <section className="relative min-h-[90vh] overflow-hidden bg-card">
+      {/* Background image */}
       <img
-        src={heroBanner}
+        src={heroPerfume}
         alt="Khaleesi Fragrances - Luxury Scents for Him and Her"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/30 to-transparent" />
-      <div className="relative container mx-auto px-6 lg:px-12 h-full flex items-center">
-        <div className="max-w-xl animate-fade-in">
-          <h1 className="heading-display text-5xl md:text-6xl lg:text-7xl text-foreground mb-4">
+      {/* Overlay gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
+
+      <div className="relative container mx-auto px-6 lg:px-12 h-full min-h-[90vh] flex items-center">
+        <div className="max-w-xl py-20">
+          <p className="font-body text-xs tracking-[0.35em] uppercase text-muted-foreground mb-6 animate-fade-in">
+            Luxury Fragrances &amp; Beauty
+          </p>
+          <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl font-light tracking-wide text-foreground mb-3 animate-fade-in">
             Khaleesi
-            <span className="block text-3xl md:text-4xl lg:text-5xl mt-2 text-muted-foreground font-light">
-              Fragrances
-            </span>
           </h1>
-          <p className="body-elegant text-lg text-muted-foreground mb-8 max-w-md">
+          <p className="font-heading text-2xl md:text-3xl lg:text-4xl font-light text-muted-foreground mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            Fragrances
+          </p>
+          <p className="font-body text-base font-light tracking-wide text-muted-foreground mb-10 max-w-sm animate-fade-in" style={{ animationDelay: "0.2s" }}>
             Luxury Scents for Him &amp; Her
           </p>
           <Link
             to="/collection/fragrance"
-            className="inline-block px-10 py-3.5 bg-primary text-primary-foreground text-xs font-body font-medium tracking-widest uppercase transition-colors hover:bg-primary/90"
+            className="inline-block px-12 py-4 bg-primary text-primary-foreground text-xs font-body font-medium tracking-[0.25em] uppercase transition-all hover:bg-primary/90 hover:shadow-lg animate-fade-in"
+            style={{ animationDelay: "0.3s" }}
           >
             Shop Fragrance
           </Link>
