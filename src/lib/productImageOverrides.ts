@@ -7,15 +7,15 @@ import productKhal from "@/assets/product-khal.jpg";
 // Map product titles (lowercase) to luxury background images
 const imageOverrides: Record<string, string> = {
   "velvet bloom": productVelvetBloom,
-  "inspreazione 100ml": productInspreazione100ml,
-  "inspreazione": productInspreazione100ml,
-  "inspirazione 50ml": productInspirazione50ml,
-  "inspirazione": productInspirazione50ml,
+  "khaleesi velvet bloom": productVelvetBloom,
+  "insprezione 100ml": productInspreazione100ml,
+  "khaleesi insprezione eau de parfum - 100ml": productInspreazione100ml,
+  "insprezione 50ml": productInspirazione50ml,
+  "khaleesi insprezione eau de parfum - 50ml": productInspirazione50ml,
   "rose": productRose,
-  "rose 50ml": productRose,
-  "khal": productKhal,
-  "khal eau de parfum": productKhal,
+  "khaleesi rose": productRose,
   "khal eau de parfum 50ml": productKhal,
+  "khal eau de parfum": productKhal,
 };
 
 export function getProductImageOverride(title: string): string | null {
