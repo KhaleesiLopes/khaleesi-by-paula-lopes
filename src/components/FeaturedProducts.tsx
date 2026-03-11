@@ -4,7 +4,7 @@ import { Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const FeaturedProducts = () => {
-  const { data: products, isLoading, error } = useShopifyProducts(10, "tag:womens");
+  const { data: products, isLoading, error } = useShopifyProducts(8);
 
   return (
     <section className="bg-card">
