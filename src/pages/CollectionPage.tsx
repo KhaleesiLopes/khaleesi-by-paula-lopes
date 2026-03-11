@@ -110,7 +110,7 @@ const CollectionPage = () => {
       <section className="container mx-auto px-6 lg:px-12 py-10 lg:py-16">
         {/* Product count */}
         {!isLoading && products && (
-          <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-12">
+          <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-8">
             {products.length} {products.length === 1 ? "Product" : "Products"}
           </p>
         )}

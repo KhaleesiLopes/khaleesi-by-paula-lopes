@@ -9,7 +9,7 @@ export const FeaturedProducts = () => {
   return (
     <section className="bg-card">
       <div className="container mx-auto px-6 lg:px-12 py-12 lg:py-16">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 className="font-heading text-3xl md:text-4xl font-light tracking-wide text-foreground">
             Featured Fragrances
           </h2>

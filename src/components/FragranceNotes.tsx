@@ -19,8 +19,8 @@ export const FragranceNotes = () => {
 
   return (
     <section className="bg-background">
-      <div className="container mx-auto px-6 lg:px-12 py-24 lg:py-32">
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-6 lg:px-12 py-12 lg:py-16">
+        <div className="text-center mb-10">
           <p className="font-body text-xs tracking-[0.35em] uppercase text-muted-foreground mb-4">
             Crafted with Intention
           </p>
