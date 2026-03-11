@@ -6,53 +6,53 @@
 
 @layer base {
   :root {
-    --background: 30 33% 97%;
+    --background: 30 40% 93%;
     --foreground: 20 30% 12%;
 
-    --card: 30 30% 95%;
+    --card: 30 45% 88%;
     --card-foreground: 20 30% 12%;
 
-    --popover: 30 33% 97%;
+    --popover: 30 40% 93%;
     --popover-foreground: 20 30% 12%;
 
-    --primary: 25 35% 28%;
-    --primary-foreground: 30 33% 97%;
+    --primary: 25 40% 32%;
+    --primary-foreground: 30 40% 93%;
 
-    --secondary: 30 30% 90%;
+    --secondary: 30 40% 84%;
     --secondary-foreground: 20 30% 12%;
 
-    --muted: 30 20% 93%;
-    --muted-foreground: 20 15% 38%;
+    --muted: 30 35% 88%;
+    --muted-foreground: 20 20% 35%;
 
-    --accent: 30 35% 85%;
+    --accent: 32 45% 80%;
     --accent-foreground: 20 30% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 20% 85%;
-    --input: 30 20% 85%;
-    --ring: 25 35% 28%;
+    --border: 30 30% 78%;
+    --input: 30 30% 78%;
+    --ring: 25 40% 32%;
 
     --radius: 0.25rem;
 
-    --sidebar-background: 30 30% 95%;
+    --sidebar-background: 30 45% 88%;
     --sidebar-foreground: 20 30% 12%;
-    --sidebar-primary: 25 35% 28%;
-    --sidebar-primary-foreground: 30 33% 97%;
-    --sidebar-accent: 30 35% 85%;
+    --sidebar-primary: 25 40% 32%;
+    --sidebar-primary-foreground: 30 40% 93%;
+    --sidebar-accent: 32 45% 80%;
     --sidebar-accent-foreground: 20 30% 12%;
-    --sidebar-border: 30 20% 85%;
-    --sidebar-ring: 25 35% 28%;
+    --sidebar-border: 30 30% 78%;
+    --sidebar-ring: 25 40% 32%;
 
     /* Custom Khaleesi tokens */
-    --khaleesi-cream: 30 33% 97%;
-    --khaleesi-sand: 30 30% 90%;
-    --khaleesi-champagne: 32 35% 85%;
-    --khaleesi-nude: 28 28% 78%;
+    --khaleesi-cream: 30 40% 93%;
+    --khaleesi-sand: 30 45% 85%;
+    --khaleesi-champagne: 32 50% 78%;
+    --khaleesi-nude: 28 35% 72%;
     --khaleesi-warm-brown: 20 30% 25%;
     --khaleesi-dark: 20 30% 12%;
-    --khaleesi-gold: 38 65% 48%;
+    --khaleesi-gold: 35 70% 50%;
 
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Outfit', sans-serif;
