@@ -40,7 +40,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Link to={`/product/${node.handle}`} className="group block">
       {/* Image with hover swap */}
-      <div className="aspect-[3/4] bg-card rounded overflow-hidden mb-5 relative">
+      <div className="aspect-square bg-card rounded overflow-hidden mb-5 relative">
         {firstImage ? (
           <>
             <img
