@@ -68,7 +68,7 @@ const CollectionPage = () => {
   let searchQuery: string | undefined;
   if (handle) {
     searchQuery = `product_type:${handle}`;
-    if (gender === "women") searchQuery += " AND tag:women";
+    if (gender === "women") searchQuery += " AND tag:womens";
     if (gender === "men") searchQuery += " AND tag:men";
   }
 
