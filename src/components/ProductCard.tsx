@@ -13,6 +13,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const addItem = useCartStore(state => state.addItem);
   const isLoading = useCartStore(state => state.isLoading);
   const { node } = product;
+  const overrideImage = getProductImageOverride(node.title);
   const firstImage = node.images.edges[0]?.node;
   const secondImage = node.images.edges[1]?.node;
   const firstVariant = node.variants.edges[0]?.node;
