@@ -4,10 +4,10 @@ import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 
 const images = [
-  { src: gallery1, alt: "Khaleesi lifestyle — luxury perfume on a vanity" },
-  { src: gallery2, alt: "Khaleesi fragrance bottle in golden hour light" },
-  { src: gallery3, alt: "Khaleesi perfume with fresh botanicals and roses" },
-  { src: gallery4, alt: "Khaleesi His & Hers fragrance duo" },
+  { src: gallery1, alt: "Khaleesi model with pearl jewelry and gold eyeshadow" },
+  { src: gallery2, alt: "Dramatic spotlight on hand holding Khaleesi fragrance" },
+  { src: gallery3, alt: "Model with pearls holding Khaleesi bottle" },
+  { src: gallery4, alt: "Couple sharing a Khaleesi fragrance moment" },
 ];
 
 export const BrandGallery = () => {
