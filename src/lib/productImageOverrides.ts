@@ -2,7 +2,7 @@ import productVelvetBloom from "@/assets/product-velvet-bloom.jpg";
 import productInspreazione100ml from "@/assets/product-inspreazione-100ml.jpg";
 import productInspirazione50ml from "@/assets/product-inspirazione-50ml.jpg";
 import productRose from "@/assets/product-rose.jpg";
-import productKhal from "@/assets/khal-bottle.png";
+import productKhal from "@/assets/product-khal.jpg";
 
 // Map product titles (lowercase) to luxury background images
 const imageOverrides: Record<string, string> = {
