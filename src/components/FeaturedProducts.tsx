@@ -38,13 +38,16 @@ export const FeaturedProducts = () => {
         )}
 
         {products && products.length > 0 && (
-          <>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-              {products.map(product => (
-                <ProductCard key={product.node.id} product={product} />
-              ))}
-            </div>
-          </>
+          <div className={`grid gap-4 md:gap-8 ${
+            products.length === 1 ? "grid-cols-1 max-w-xs" :
+            products.length === 2 ? "grid-cols-2 max-w-2xl" :
+            products.length === 3 ? "grid-cols-2 md:grid-cols-3 max-w-4xl" :
+            "grid-cols-2 md:grid-cols-4"
+          } mx-auto`}>
+            {products.map(product => (
+              <ProductCard key={product.node.id} product={product} />
+            ))}
+          </div>
         )}
       </div>
     </section>
