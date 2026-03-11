@@ -123,9 +123,13 @@ const CollectionPage = () => {
 
         {!isLoading && products && products.length === 0 && (
           <div className="text-center py-24">
-            <p className="font-heading text-2xl font-light text-foreground mb-3">No products found</p>
-            <p className="font-body text-sm text-muted-foreground">
-              Products will appear here once added to the Shopify store.
+            <p className="font-heading text-3xl font-light text-foreground mb-4">
+              {handle === "fragrance" ? "No products found" : "Products Coming Soon"}
+            </p>
+            <p className="font-body text-sm text-muted-foreground max-w-md mx-auto">
+              {handle === "fragrance"
+                ? "Products will appear here once added to the store."
+                : "We're crafting something special. Stay tuned for our upcoming collection."}
             </p>
           </div>
         )}
