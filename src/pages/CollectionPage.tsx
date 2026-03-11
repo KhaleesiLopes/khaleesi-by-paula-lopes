@@ -3,7 +3,7 @@ import { useShopifyProducts } from "@/hooks/useShopifyProducts";
 import { ProductCard } from "@/components/ProductCard";
 import { Loader2 } from "lucide-react";
 import womensImg from "@/assets/womens-fragrance.jpg";
-import mensImg from "@/assets/mens-fragrance.jpg";
+import mensImg from "@/assets/khal-model-1.png";
 import categoryFragrance from "@/assets/category-fragrance.jpg";
 import categoryMakeup from "@/assets/category-makeup.jpg";
 import categorySkincare from "@/assets/category-skincare.jpg";
@@ -85,7 +85,7 @@ const CollectionPage = () => {
         <img
           src={heroImage}
           alt={displayTitle}
-          className="absolute inset-0 w-full h-full object-cover object-top"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-foreground/20 to-foreground/10" />
         <div className="relative h-full flex items-end">
