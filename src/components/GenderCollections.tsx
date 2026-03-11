@@ -45,7 +45,7 @@ export const GenderCollections = () => {
               />
             </div>
             <div className="absolute inset-0 bg-black/20" />
-            <div className="absolute top-0 left-0 p-8 lg:p-10">
+            <div className="absolute bottom-0 left-0 p-8 lg:p-10">
               <h3 className="font-heading text-2xl md:text-3xl font-light text-white mb-4">
                 Men's Fragrance
               </h3>
