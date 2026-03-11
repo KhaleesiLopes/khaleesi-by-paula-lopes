@@ -6,11 +6,11 @@ export const SignatureFragrance = () => {
     <section className="bg-background">
       <div className="grid md:grid-cols-2 items-stretch">
         {/* Image — full bleed */}
-        <div className="relative min-h-[450px] md:min-h-[550px] lg:min-h-[600px] overflow-hidden">
+        <div className="overflow-hidden">
           <img
             src={signatureImg}
             alt="Khaleesi Signature Fragrance"
-            className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
+            className="w-full h-full min-h-[400px] md:min-h-[500px] object-cover object-top"
             loading="lazy"
           />
         </div>
