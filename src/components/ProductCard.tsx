@@ -13,6 +13,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const isLoading = useCartStore(state => state.isLoading);
   const { node } = product;
   const firstImage = node.images.edges[0]?.node;
+  const secondImage = node.images.edges[1]?.node;
   const firstVariant = node.variants.edges[0]?.node;
   const price = node.priceRange.minVariantPrice;
 
@@ -38,30 +39,60 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <Link to={`/product/${node.handle}`} className="group block">
-      <div className="aspect-square bg-card rounded overflow-hidden mb-4">
+      {/* Image with hover swap */}
+      <div className="aspect-[3/4] bg-card rounded overflow-hidden mb-5 relative">
         {firstImage ? (
-          <img
-            src={firstImage.url}
-            alt={firstImage.altText || node.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
+          <>
+            <img
+              src={firstImage.url}
+              alt={firstImage.altText || node.title}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                secondImage ? "group-hover:opacity-0" : ""
+              }`}
+              loading="lazy"
+            />
+            {secondImage && (
+              <img
+                src={secondImage.url}
+                alt={secondImage.altText || node.title}
+                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                loading="lazy"
+              />
+            )}
+          </>
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-muted-foreground font-body text-sm">
+          <div className="w-full h-full flex items-center justify-center text-muted-foreground font-body text-xs tracking-wide">
             No image
           </div>
         )}
+
+        {/* Hover Add to Bag overlay */}
+        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+          <button
+            onClick={handleAddToBag}
+            disabled={isLoading || !firstVariant?.availableForSale}
+            className="w-full py-3 bg-background/95 backdrop-blur-sm text-foreground text-[10px] font-body font-medium tracking-[0.25em] uppercase transition-colors hover:bg-foreground hover:text-background disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin mx-auto" /> : "Add to Bag"}
+          </button>
+        </div>
       </div>
-      <h3 className="font-heading text-lg font-medium text-foreground mb-1">{node.title}</h3>
-      <p className="font-body text-sm text-muted-foreground mb-3">
+
+      {/* Info */}
+      <h3 className="font-heading text-base lg:text-lg font-medium text-foreground mb-1 transition-colors group-hover:text-primary">
+        {node.title}
+      </h3>
+      <p className="font-body text-sm text-muted-foreground">
         {price.currencyCode} {parseFloat(price.amount).toFixed(2)}
       </p>
+
+      {/* Mobile Add to Bag (visible only on touch devices) */}
       <button
         onClick={handleAddToBag}
         disabled={isLoading || !firstVariant?.availableForSale}
-        className="w-full py-2.5 border border-foreground text-foreground text-xs font-body font-medium tracking-widest uppercase transition-colors hover:bg-foreground hover:text-background disabled:opacity-50 disabled:cursor-not-allowed"
+        className="lg:hidden w-full mt-3 py-2.5 border border-foreground text-foreground text-[10px] font-body font-medium tracking-[0.25em] uppercase transition-colors hover:bg-foreground hover:text-background disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {isLoading ? <Loader2 className="w-4 h-4 animate-spin mx-auto" /> : "Add to Bag"}
+        {isLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin mx-auto" /> : "Add to Bag"}
       </button>
     </Link>
   );
