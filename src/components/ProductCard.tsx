@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import type { ShopifyProduct } from "@/lib/shopify";
+import { getProductImageOverride } from "@/lib/productImageOverrides";
 import { toast } from "sonner";
 
 interface ProductCardProps {
