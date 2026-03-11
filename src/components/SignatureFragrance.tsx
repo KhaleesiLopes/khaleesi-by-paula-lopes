@@ -23,7 +23,7 @@ export const SignatureFragrance = () => {
           {/* Copy */}
           <div className="lg:pl-8">
             <p className="font-body text-xs tracking-[0.35em] uppercase text-muted-foreground mb-6">
-              Signature Collection
+              The Art of Distinction
             </p>
             <h2 className="font-heading text-4xl md:text-5xl font-light tracking-wide text-foreground mb-6">
               Khaleesi
@@ -33,10 +33,10 @@ export const SignatureFragrance = () => {
             </h2>
             <div className="w-12 h-px bg-primary mb-8" />
             <p className="font-body text-base font-light leading-relaxed tracking-wide text-muted-foreground mb-4">
-              Our most loved fragrance. A timeless blend of elegance, warmth, and mystery.
+              A masterful composition that captures the essence of power and grace. Layered with rare botanicals and precious resins, our signature scent lingers like a whispered promise.
             </p>
             <p className="font-body text-sm font-light leading-relaxed tracking-wide text-muted-foreground mb-10">
-              Crafted with the finest ingredients from around the world, each note unfolds to reveal a story of sophistication and grace.
+              From the sun-drenched fields of Grasse to the ancient amber routes of the East, every ingredient tells a story of heritage and artistry.
             </p>
             <Link
               to="/collection/fragrance"

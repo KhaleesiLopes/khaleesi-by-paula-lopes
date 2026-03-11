@@ -4,10 +4,10 @@ import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 
 const images = [
-  { src: gallery1, alt: "Khaleesi lifestyle - luxury perfume and accessories" },
-  { src: gallery2, alt: "Khaleesi fragrance spray in golden light" },
-  { src: gallery3, alt: "Khaleesi perfume collection with botanicals" },
-  { src: gallery4, alt: "Khaleesi Femme and Homme fragrances" },
+  { src: gallery1, alt: "Khaleesi lifestyle — luxury perfume on a vanity" },
+  { src: gallery2, alt: "Khaleesi fragrance bottle in golden hour light" },
+  { src: gallery3, alt: "Khaleesi perfume with fresh botanicals and roses" },
+  { src: gallery4, alt: "Khaleesi His & Hers fragrance duo" },
 ];
 
 export const BrandGallery = () => {
@@ -16,10 +16,10 @@ export const BrandGallery = () => {
       <div className="container mx-auto px-6 lg:px-12 py-24 lg:py-32">
         <div className="text-center mb-16">
           <p className="font-body text-xs tracking-[0.35em] uppercase text-muted-foreground mb-4">
-            @khaleesi
+            @khaleesifragrances
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-light tracking-wide text-foreground">
-            Follow the Khaleesi Experience
+            Live the Khaleesi Lifestyle
           </h2>
           <div className="w-12 h-px bg-primary mx-auto mt-6" />
         </div>

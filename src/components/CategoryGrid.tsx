@@ -5,10 +5,10 @@ import categorySkincare from "@/assets/category-skincare.jpg";
 import categorySpa from "@/assets/category-spa.jpg";
 
 const categories = [
-  { label: "Fragrance", to: "/collection/fragrance", image: categoryFragrance },
-  { label: "Makeup", to: "/collection/makeup", image: categoryMakeup },
-  { label: "Skincare", to: "/collection/skincare", image: categorySkincare },
-  { label: "Spa", to: "/collection/spa", image: categorySpa },
+  { label: "Fragrance", subtitle: "Scents that define you", to: "/collection/fragrance", image: categoryFragrance },
+  { label: "Makeup", subtitle: "Artistry in every stroke", to: "/collection/makeup", image: categoryMakeup },
+  { label: "Skincare", subtitle: "Radiance from within", to: "/collection/skincare", image: categorySkincare },
+  { label: "Spa", subtitle: "Indulge in luxury", to: "/collection/spa", image: categorySpa },
 ];
 
 export const CategoryGrid = () => {
@@ -17,10 +17,10 @@ export const CategoryGrid = () => {
       <div className="container mx-auto px-6 lg:px-12 py-24 lg:py-32">
         <div className="text-center mb-16">
           <p className="font-body text-xs tracking-[0.35em] uppercase text-muted-foreground mb-4">
-            Explore
+            Explore Our World
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-light tracking-wide text-foreground">
-            Beauty Categories
+            Beauty, Elevated
           </h2>
           <div className="w-12 h-px bg-primary mx-auto mt-6" />
         </div>
@@ -35,16 +35,19 @@ export const CategoryGrid = () => {
               <div className="aspect-square overflow-hidden">
                 <img
                   src={cat.image}
-                  alt={cat.label}
+                  alt={`${cat.label} — ${cat.subtitle}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6 text-center">
-                <h3 className="font-heading text-lg md:text-xl font-medium text-background">
+                <h3 className="font-heading text-lg md:text-xl font-medium text-white">
                   {cat.label}
                 </h3>
+                <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/60 mt-1">
+                  {cat.subtitle}
+                </p>
               </div>
             </Link>
           ))}

@@ -2,18 +2,18 @@ export const FragranceNotes = () => {
   const notes = [
     {
       title: "Top Notes",
-      ingredients: ["Bergamot", "Citrus", "Rose"],
-      description: "The first impression — bright, uplifting, and captivating.",
+      ingredients: ["Bergamot", "Pink Pepper", "Italian Lemon"],
+      description: "A luminous opening — effervescent citrus and spice that awaken the senses instantly.",
     },
     {
       title: "Heart Notes",
-      ingredients: ["Jasmine", "Vanilla", "Amber"],
-      description: "The soul of the fragrance — warm, sensual, and unforgettable.",
+      ingredients: ["Turkish Rose", "Jasmine Sambac", "Orris"],
+      description: "The beating heart — an intoxicating floral bouquet that embodies feminine power and allure.",
     },
     {
       title: "Base Notes",
-      ingredients: ["Sandalwood", "Musk"],
-      description: "The lasting signature — deep, grounding, and mysterious.",
+      ingredients: ["Mysore Sandalwood", "White Musk", "Amber"],
+      description: "The lasting imprint — a velvety warmth that wraps around you like liquid gold.",
     },
   ];
 
@@ -22,10 +22,10 @@ export const FragranceNotes = () => {
       <div className="container mx-auto px-6 lg:px-12 py-24 lg:py-32">
         <div className="text-center mb-16">
           <p className="font-body text-xs tracking-[0.35em] uppercase text-muted-foreground mb-4">
-            The Art of Scent
+            Crafted with Intention
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-light tracking-wide text-foreground">
-            Fragrance Notes
+            The Anatomy of a Scent
           </h2>
           <div className="w-12 h-px bg-primary mx-auto mt-6" />
         </div>
