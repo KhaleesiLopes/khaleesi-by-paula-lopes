@@ -2,6 +2,7 @@ import productVelvetBloom from "@/assets/product-velvet-bloom.jpg";
 import productInspreazione100ml from "@/assets/product-inspreazione-100ml.jpg";
 import productInspirazione50ml from "@/assets/product-inspirazione-50ml.jpg";
 import productRose from "@/assets/product-rose.jpg";
+import khalBottle from "@/assets/khal-bottle.png";
 
 // Map product titles (lowercase) to luxury background images
 const imageOverrides: Record<string, string> = {
@@ -12,6 +13,9 @@ const imageOverrides: Record<string, string> = {
   "inspirazione": productInspirazione50ml,
   "rose": productRose,
   "rose 50ml": productRose,
+  "khal": khalBottle,
+  "khal eau de parfum": khalBottle,
+  "khal 50ml": khalBottle,
 };
 
 export function getProductImageOverride(title: string): string | null {

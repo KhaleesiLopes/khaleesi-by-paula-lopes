@@ -46,7 +46,7 @@ const genderMeta: Record<string, { title: string; subtitle: string; heroImage: s
   },
   men: {
     title: "Men's Fragrance",
-    subtitle: "Bold and refined fragrances for the distinguished gentleman.",
+    subtitle: "Intense and striking notes that blend strength and sophistication.",
     heroImage: mensImg,
   },
 };
