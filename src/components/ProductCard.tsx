@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import type { ShopifyProduct } from "@/lib/shopify";
+import { getProductImageOverride } from "@/lib/productImageOverrides";
 import { toast } from "sonner";
 
 interface ProductCardProps {
@@ -12,6 +13,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const addItem = useCartStore(state => state.addItem);
   const isLoading = useCartStore(state => state.isLoading);
   const { node } = product;
+  const overrideImage = getProductImageOverride(node.title);
   const firstImage = node.images.edges[0]?.node;
   const secondImage = node.images.edges[1]?.node;
   const firstVariant = node.variants.edges[0]?.node;
@@ -41,7 +43,14 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     <Link to={`/product/${node.handle}`} className="group block">
       {/* Image with hover swap */}
       <div className="aspect-[3/4] bg-muted/30 overflow-hidden mb-5 relative">
-        {firstImage ? (
+        {overrideImage ? (
+          <img
+            src={overrideImage}
+            alt={node.title}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+        ) : firstImage ? (
           <>
             <img
               src={firstImage.url}
