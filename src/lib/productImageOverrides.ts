@@ -24,9 +24,14 @@ export function getProductImageOverride(title: string): string | null {
   // Try exact match first
   if (imageOverrides[lower]) return imageOverrides[lower];
   
-  // Try partial match
+  // Try partial match — but require the key to match as a distinct segment
   for (const [key, url] of Object.entries(imageOverrides)) {
-    if (lower.includes(key) || key.includes(lower)) return url;
+    if (lower === key) return url;
+  }
+  
+  // Looser partial match only for non-ambiguous keys (skip short keys like "rose")
+  for (const [key, url] of Object.entries(imageOverrides)) {
+    if (key.length > 5 && lower.includes(key)) return url;
   }
   
   return null;
