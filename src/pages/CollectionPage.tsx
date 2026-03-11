@@ -81,11 +81,11 @@ const CollectionPage = () => {
   return (
     <main className="pt-0 pb-0">
       {/* Collection Hero */}
-      <section className="relative h-[40vh] min-h-[300px] lg:h-[50vh] overflow-hidden">
+      <section className="relative h-[50vh] min-h-[350px] lg:h-[60vh] overflow-hidden">
         <img
           src={heroImage}
           alt={displayTitle}
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-foreground/20 to-foreground/10" />
         <div className="relative h-full flex items-end">
