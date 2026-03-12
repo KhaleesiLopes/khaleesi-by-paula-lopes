@@ -19,6 +19,10 @@ const ContactPage = () => {
                 <p className="font-body text-xs tracking-widest uppercase text-muted-foreground mb-1">Email</p>
                 <p className="font-body text-foreground">khaleesibypaulalopes@gmail.com</p>
               </div>
+              <div>
+                <p className="font-body text-xs tracking-widest uppercase text-muted-foreground mb-1">Telephone</p>
+                <p className="font-body text-foreground">+1 (667) 231-1726</p>
+              </div>
             </div>
           </div>
 
