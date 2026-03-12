@@ -114,7 +114,7 @@ const ProductDetailPage = () => {
             <p className="font-body text-xs tracking-[0.35em] uppercase text-muted-foreground mb-4">
               Khaleesi
             </p>
-            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-foreground mb-6">
+            <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-foreground mb-4 md:mb-6">
               {node.title}
             </h1>
             <p className="font-heading text-2xl font-light text-foreground mb-8">
