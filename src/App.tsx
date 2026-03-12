@@ -14,6 +14,7 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import AboutPage from "./pages/AboutPage";
 import FAQPage from "./pages/FAQPage";
 import ContactPage from "./pages/ContactPage";
+import AmbassadorsPage from "./pages/AmbassadorsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
