@@ -22,7 +22,7 @@ const AboutPage = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-20">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto mb-14 md:mb-20">
           {[
             { title: "Craftsmanship", text: "Every fragrance is meticulously crafted by master perfumers using the finest natural ingredients." },
             { title: "Elegance", text: "Our designs embody timeless sophistication, from the bottle to the scent within." },
