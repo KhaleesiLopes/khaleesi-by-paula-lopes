@@ -27,8 +27,6 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
     if (!checkoutUrl) return;
 
     const safeCheckoutUrl = normalizeCheckoutUrl(checkoutUrl);
-    console.info('[checkout] opening url', { raw: checkoutUrl, safe: safeCheckoutUrl });
-
     const checkoutWindow = window.open(safeCheckoutUrl, '_blank', 'noopener,noreferrer');
     if (!checkoutWindow) {
       window.location.assign(safeCheckoutUrl);
