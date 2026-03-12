@@ -57,17 +57,17 @@ const AmbassadorsPage = () => {
                 </div>
               </div>
               <div className={index % 2 === 1 ? "md:order-1" : ""}>
-                <p className="font-body text-xs tracking-[0.25em] uppercase text-primary mb-2">
+                <p className="font-body text-sm tracking-[0.25em] uppercase text-primary mb-2">
                   Khaleesi Ambassador
                 </p>
                 <h2 className="heading-serif text-3xl md:text-4xl text-foreground mb-1">
                   {ambassador.name}
                 </h2>
-                <p className="font-body text-sm text-muted-foreground tracking-wide mb-6">
+                <p className="font-body text-base text-muted-foreground tracking-wide mb-6">
                   {ambassador.location}
                 </p>
                 {ambassador.bio.map((paragraph, i) => (
-                  <p key={i} className="body-elegant text-muted-foreground mb-4 text-sm leading-relaxed">
+                  <p key={i} className="body-elegant text-muted-foreground mb-4 text-base leading-relaxed">
                     {paragraph}
                   </p>
                 ))}
