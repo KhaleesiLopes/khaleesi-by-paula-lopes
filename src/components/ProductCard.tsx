@@ -40,9 +40,9 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <Link to={`/product/${node.handle}`} className="group block">
+    <Link to={`/product/${node.handle}`} className="group flex flex-col">
       {/* Image with hover swap */}
-      <div className="aspect-[3/4] bg-muted/30 overflow-hidden mb-5 relative">
+      <div className="aspect-[3/4] bg-muted/30 overflow-hidden mb-3 md:mb-5 relative">
         {overrideImage ? (
           <img
             src={overrideImage}
@@ -87,22 +87,24 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         </div>
       </div>
 
-      {/* Info */}
-      <h3 className="font-heading text-base lg:text-lg font-medium text-foreground mb-1 transition-colors group-hover:text-primary">
-        {node.title}
-      </h3>
-      <p className="font-body text-sm text-muted-foreground">
-        £{parseFloat(price.amount).toFixed(2)}
-      </p>
+      {/* Info — flex-grow to push button to bottom */}
+      <div className="flex flex-col flex-1">
+        <h3 className="font-heading text-sm md:text-base lg:text-lg font-medium text-foreground mb-1 transition-colors group-hover:text-primary">
+          {node.title}
+        </h3>
+        <p className="font-body text-xs md:text-sm text-muted-foreground mb-3">
+          £{parseFloat(price.amount).toFixed(2)}
+        </p>
 
-      {/* Mobile Add to Bag (visible only on touch devices) */}
-      <button
-        onClick={handleAddToBag}
-        disabled={isLoading || !firstVariant?.availableForSale}
-        className="lg:hidden w-full mt-3 py-2.5 border border-foreground text-foreground text-[10px] font-body font-medium tracking-[0.25em] uppercase transition-colors hover:bg-foreground hover:text-background disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {isLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin mx-auto" /> : "Add to Bag"}
-      </button>
+        {/* Mobile Add to Bag — pushed to bottom */}
+        <button
+          onClick={handleAddToBag}
+          disabled={isLoading || !firstVariant?.availableForSale}
+          className="lg:hidden w-full mt-auto py-2.5 border border-foreground text-foreground text-[10px] font-body font-medium tracking-[0.25em] uppercase transition-colors hover:bg-foreground hover:text-background disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {isLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin mx-auto" /> : "Add to Bag"}
+        </button>
+      </div>
     </Link>
   );
 };

@@ -79,7 +79,7 @@ const CollectionPage = () => {
   const heroImage = genderInfo?.heroImage || meta.heroImage;
 
   return (
-    <main className="pt-0 pb-0">
+    <main className="pt-16 md:pt-20 pb-0">
       {/* Collection Hero — split layout */}
       <section className="relative grid md:grid-cols-2 min-h-[280px] md:min-h-[400px] lg:min-h-[500px] bg-foreground">
         {/* Text panel */}
