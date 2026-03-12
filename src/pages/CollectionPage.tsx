@@ -97,11 +97,11 @@ const CollectionPage = () => {
           </div>
         </div>
         {/* Image panel */}
-        <div className="relative min-h-[200px] md:min-h-full order-1 md:order-2 overflow-hidden">
+        <div className="relative min-h-[250px] md:min-h-full order-1 md:order-2 overflow-hidden">
           <img
             src={heroImage}
             alt={displayTitle}
-            className="absolute inset-0 w-full h-full object-cover object-top"
+            className="absolute inset-0 w-full h-full object-cover object-center"
           />
         </div>
       </section>
