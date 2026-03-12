@@ -8,6 +8,7 @@ import {
   addLineToShopifyCart,
   updateShopifyCartLine,
   removeLineFromShopifyCart,
+  normalizeCheckoutUrl,
 } from '@/lib/shopify';
 
 export interface CartItem {
