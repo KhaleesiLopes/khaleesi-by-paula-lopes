@@ -10,6 +10,7 @@ const footerLinks = {
   ],
   Company: [
     { label: "About", to: "/about" },
+    { label: "Ambassadors", to: "/ambassadors" },
     { label: "FAQ", to: "/faq" },
     { label: "Contact", to: "/contact" },
   ],
