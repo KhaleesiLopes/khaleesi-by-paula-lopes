@@ -17,7 +17,7 @@ const ContactPage = () => {
             <div className="space-y-4">
               <div>
                 <p className="font-body text-xs tracking-widest uppercase text-muted-foreground mb-1">Email</p>
-                <p className="font-body text-foreground">support@khalessi.shop</p>
+                <p className="font-body text-foreground">khaleesibypaulalopes@gmail.com</p>
               </div>
             </div>
           </div>
