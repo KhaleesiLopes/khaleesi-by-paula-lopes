@@ -227,9 +227,9 @@ const ProductDetailPage = () => {
 
       {/* Related Products */}
       {filteredRelated && filteredRelated.length > 0 && (
-        <section className="bg-card mt-24 lg:mt-32">
-          <div className="container mx-auto px-6 lg:px-12 py-24">
-            <div className="text-center mb-14">
+        <section className="bg-card mt-12 md:mt-24 lg:mt-32">
+          <div className="container mx-auto px-4 md:px-6 lg:px-12 py-12 md:py-24">
+            <div className="text-center mb-8 md:mb-14">
               <p className="font-body text-xs tracking-[0.35em] uppercase text-muted-foreground mb-4">
                 You May Also Love
               </p>
