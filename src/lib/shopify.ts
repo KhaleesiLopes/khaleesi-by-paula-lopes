@@ -228,6 +228,9 @@ export const CART_LINES_REMOVE_MUTATION = `
 function formatCheckoutUrl(checkoutUrl: string): string {
   try {
     const url = new URL(checkoutUrl);
+    // Always use the permanent .myshopify.com domain for checkout
+    // in case the custom domain DNS no longer points to Shopify
+    url.hostname = SHOPIFY_STORE_PERMANENT_DOMAIN;
     url.searchParams.set('channel', 'online_store');
     return url.toString();
   } catch {
