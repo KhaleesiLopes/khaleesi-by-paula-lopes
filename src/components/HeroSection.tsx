@@ -8,6 +8,8 @@ export const HeroSection = () => {
         src={heroPerfume}
         alt="Khaleesi Fragrances - Luxury Scents for Him and Her"
         className="absolute inset-0 w-full h-full object-cover"
+        fetchPriority="high"
+        decoding="async"
       />
       <div className="absolute inset-0 bg-black/30" />
 
