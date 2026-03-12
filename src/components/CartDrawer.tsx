@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ShoppingBag, Minus, Plus, X, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
+import { normalizeCheckoutUrl } from "@/lib/shopify";
 
 interface CartDrawerProps {
   open: boolean;
@@ -20,12 +21,18 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
     if (open) syncCart();
   }, [open, syncCart]);
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
+    await syncCart();
     const checkoutUrl = getCheckoutUrl();
-    if (checkoutUrl) {
-      window.open(checkoutUrl, '_blank');
-      onOpenChange(false);
+    if (!checkoutUrl) return;
+
+    const safeCheckoutUrl = normalizeCheckoutUrl(checkoutUrl);
+    const checkoutWindow = window.open(safeCheckoutUrl, '_blank', 'noopener,noreferrer');
+    if (!checkoutWindow) {
+      window.location.assign(safeCheckoutUrl);
     }
+
+    onOpenChange(false);
   };
 
   return (
@@ -153,7 +160,7 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <button
-                  onClick={handleCheckout}
+                  onClick={() => void handleCheckout()}
                   className="w-full py-4 bg-primary text-primary-foreground text-xs font-body font-medium tracking-[0.25em] uppercase transition-all hover:bg-primary/90 disabled:opacity-50"
                   disabled={items.length === 0 || isLoading || isSyncing}
                 >
