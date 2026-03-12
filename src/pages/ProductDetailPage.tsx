@@ -73,8 +73,8 @@ const ProductDetailPage = () => {
       </div>
 
       {/* Product Section */}
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-10 lg:gap-20">
           {/* Gallery */}
           <div className="space-y-4">
             <div className="aspect-[3/4] bg-card rounded overflow-hidden">
