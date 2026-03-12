@@ -46,7 +46,9 @@ export const Footer = () => {
             <h4 className="font-heading text-lg font-medium text-foreground mb-5">Follow Us</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/khaleesi_pl"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Instagram"
               >
