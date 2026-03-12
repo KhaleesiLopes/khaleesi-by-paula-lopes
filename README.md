@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Khaleesi by Paula Lopes
 
 ## Project info
 
