@@ -162,7 +162,7 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <button
-                  onClick={handleCheckout}
+                  onClick={() => void handleCheckout()}
                   className="w-full py-4 bg-primary text-primary-foreground text-xs font-body font-medium tracking-[0.25em] uppercase transition-all hover:bg-primary/90 disabled:opacity-50"
                   disabled={items.length === 0 || isLoading || isSyncing}
                 >

@@ -230,19 +230,31 @@ export const CART_LINES_REMOVE_MUTATION = `
 `;
 
 export function normalizeCheckoutUrl(checkoutUrl: string): string {
+  const trimmedCheckoutUrl = checkoutUrl.trim();
+  if (!trimmedCheckoutUrl) return trimmedCheckoutUrl;
+
   try {
-    const url = checkoutUrl.startsWith('http://') || checkoutUrl.startsWith('https://')
-      ? new URL(checkoutUrl)
-      : new URL(checkoutUrl, `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}`);
+    let normalizedInput = trimmedCheckoutUrl;
+
+    if (normalizedInput.startsWith('//')) {
+      normalizedInput = `https:${normalizedInput}`;
+    } else if (normalizedInput.startsWith('/')) {
+      normalizedInput = `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}${normalizedInput}`;
+    } else if (!/^https?:\/\//i.test(normalizedInput)) {
+      normalizedInput = `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}/${normalizedInput.replace(/^\/+/, '')}`;
+    }
+
+    const url = new URL(normalizedInput);
 
     // Always use the permanent .myshopify.com domain for checkout
     // in case the custom domain DNS no longer points to Shopify
     url.protocol = 'https:';
     url.hostname = SHOPIFY_STORE_PERMANENT_DOMAIN;
     url.searchParams.set('channel', 'online_store');
+
     return url.toString();
   } catch {
-    return checkoutUrl;
+    return `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}/cart?channel=online_store`;
   }
 }
 
