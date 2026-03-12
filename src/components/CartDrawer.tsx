@@ -21,12 +21,20 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
     if (open) syncCart();
   }, [open, syncCart]);
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
+    await syncCart();
     const checkoutUrl = getCheckoutUrl();
-    if (checkoutUrl) {
-      window.open(checkoutUrl, '_blank');
-      onOpenChange(false);
+    if (!checkoutUrl) return;
+
+    const safeCheckoutUrl = normalizeCheckoutUrl(checkoutUrl);
+    console.info('[checkout] opening url', { raw: checkoutUrl, safe: safeCheckoutUrl });
+
+    const checkoutWindow = window.open(safeCheckoutUrl, '_blank', 'noopener,noreferrer');
+    if (!checkoutWindow) {
+      window.location.assign(safeCheckoutUrl);
     }
+
+    onOpenChange(false);
   };
 
   return (
