@@ -1,4 +1,4 @@
-import aboutBrand from "@/assets/about-brand.jpg";
+import ceoPaula from "@/assets/ceo-paula.png";
 import ceoPaula from "@/assets/ceo-paula.png";
 
 const AboutPage = () => {
