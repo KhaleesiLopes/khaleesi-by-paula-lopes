@@ -23,6 +23,16 @@ const ambassadors = [
       "From Glasgow, Mary continues to support and represent Khaleesi, helping our brand reach new customers and fragrance lovers around the world.",
     ],
   },
+  {
+    name: "Waldira Liliana Silva",
+    location: "Edinburgh, Scotland",
+    image: ambassadorWaldira,
+    bio: [
+      "Based in Edinburgh, Scotland, Waldira Liliana Silva proudly represents Khaleesi as one of our official brand ambassadors. From the very beginning of the brand's journey, Waldira has been a strong supporter, standing beside her sister and believing in the vision behind Khaleesi.",
+      "Her values of loyalty, empowerment, family, and confidence align deeply with what Khaleesi represents. Waldira continues to champion the brand by sharing its message of individuality and bold self-expression while helping introduce Khaleesi to new audiences internationally.",
+      "Through her dedication and belief in the brand's mission, she embodies the heart of Khaleesi—strength, support, and empowering others to embrace who they are.",
+    ],
+  },
 ];
 
 const AmbassadorsPage = () => {
