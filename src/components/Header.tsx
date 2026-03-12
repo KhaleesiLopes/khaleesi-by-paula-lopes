@@ -149,12 +149,13 @@ export const Header = ({ onCartOpen }: HeaderProps) => {
 
       {/* Mobile menu overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 bg-background z-40">
+        <div className="lg:hidden fixed inset-0 top-16 bg-background z-[60] overflow-y-auto">
           <nav className="container mx-auto px-6 py-8 flex flex-col gap-0">
             {allNavLinks.map((link, idx) => (
               <Link
                 key={link.to}
                 to={link.to}
+                onClick={() => setMobileMenuOpen(false)}
                 className={`text-sm font-body font-medium tracking-[0.2em] uppercase py-4 transition-colors border-b border-border/50 ${
                   isActive(link.to) ? "text-primary" : "text-foreground"
                 }`}
