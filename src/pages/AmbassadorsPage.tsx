@@ -1,5 +1,6 @@
 import ambassadorDebora from "@/assets/ambassador-debora.jpg";
 import ambassadorMary from "@/assets/ambassador-mary.jpg";
+import ambassadorWaldira from "@/assets/ambassador-waldira.jpg";
 
 const ambassadors = [
   {
