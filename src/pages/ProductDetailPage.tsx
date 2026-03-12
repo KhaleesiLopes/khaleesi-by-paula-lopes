@@ -60,9 +60,9 @@ const ProductDetailPage = () => {
   };
 
   return (
-    <main className="pt-24 lg:pt-28 pb-0">
+    <main className="pt-20 md:pt-24 lg:pt-28 pb-0">
       {/* Breadcrumb */}
-      <div className="container mx-auto px-6 lg:px-12 mb-8 lg:mb-12">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12 mb-5 md:mb-8 lg:mb-12">
         <Link
           to="/collection/fragrance"
           className="inline-flex items-center gap-1.5 text-xs font-body tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors"
