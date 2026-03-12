@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ShoppingBag, Minus, Plus, X, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
+import { normalizeCheckoutUrl } from "@/lib/shopify";
 
 interface CartDrawerProps {
   open: boolean;
