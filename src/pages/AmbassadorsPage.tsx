@@ -5,7 +5,7 @@ const ambassadors = [
   {
     name: "Débora Vanessa Valdez",
     location: "Lisbon, Portugal",
-    image: ambassadorDebora,
+    image: ambassadorMary,
     bio: [
       "Based in Lisbon, Portugal, our ambassador represents the vision and spirit of Khaleesi in one of Europe's most vibrant cities. With a genuine passion for fragrance and creativity, she helps introduce Khaleesi perfumes to new audiences while embodying the elegance, confidence, and individuality behind the brand.",
       "Through her work and presence, she supports Khaleesi's growth by sharing authentic experiences with our fragrances, connecting with the community, and helping build awareness of our collection across Portugal and beyond. Her dedication and influence play an important role in expanding the Khaleesi brand internationally.",
@@ -15,7 +15,7 @@ const ambassadors = [
   {
     name: "Mary Ojo",
     location: "Glasgow, Scotland",
-    image: ambassadorMary,
+    image: ambassadorDebora,
     bio: [
       "Based in Glasgow, Scotland, Mary Ojo proudly represents the Khaleesi brand and its vision of confidence, elegance, and individuality. With a strong passion for fragrance and a natural ability to connect with people, she plays an important role in introducing Khaleesi perfumes to new audiences across the UK.",
       "Through her dedication and creativity, Mary helps grow the Khaleesi community by sharing her genuine experiences with our fragrances and building awareness of the brand. Her voice and presence help strengthen Khaleesi's international reach while reflecting the values and identity behind every scent we create.",
@@ -57,17 +57,17 @@ const AmbassadorsPage = () => {
                 </div>
               </div>
               <div className={index % 2 === 1 ? "md:order-1" : ""}>
-                <p className="font-body text-xs tracking-[0.25em] uppercase text-primary mb-2">
+                <p className="font-body text-sm tracking-[0.25em] uppercase text-primary mb-2">
                   Khaleesi Ambassador
                 </p>
                 <h2 className="heading-serif text-3xl md:text-4xl text-foreground mb-1">
                   {ambassador.name}
                 </h2>
-                <p className="font-body text-sm text-muted-foreground tracking-wide mb-6">
+                <p className="font-body text-base text-muted-foreground tracking-wide mb-6">
                   {ambassador.location}
                 </p>
                 {ambassador.bio.map((paragraph, i) => (
-                  <p key={i} className="body-elegant text-muted-foreground mb-4 text-sm leading-relaxed">
+                  <p key={i} className="body-elegant text-muted-foreground mb-4 text-base leading-relaxed">
                     {paragraph}
                   </p>
                 ))}
