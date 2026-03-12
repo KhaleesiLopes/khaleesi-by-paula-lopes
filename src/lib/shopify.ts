@@ -178,7 +178,11 @@ export const STOREFRONT_PRODUCT_BY_HANDLE_QUERY = `
 // Cart mutations
 export const CART_QUERY = `
   query cart($id: ID!) {
-    cart(id: $id) { id totalQuantity }
+    cart(id: $id) {
+      id
+      totalQuantity
+      checkoutUrl
+    }
   }
 `;
 
@@ -225,11 +229,15 @@ export const CART_LINES_REMOVE_MUTATION = `
   }
 `;
 
-function formatCheckoutUrl(checkoutUrl: string): string {
+export function normalizeCheckoutUrl(checkoutUrl: string): string {
   try {
-    const url = new URL(checkoutUrl);
+    const url = checkoutUrl.startsWith('http://') || checkoutUrl.startsWith('https://')
+      ? new URL(checkoutUrl)
+      : new URL(checkoutUrl, `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}`);
+
     // Always use the permanent .myshopify.com domain for checkout
     // in case the custom domain DNS no longer points to Shopify
+    url.protocol = 'https:';
     url.hostname = SHOPIFY_STORE_PERMANENT_DOMAIN;
     url.searchParams.set('channel', 'online_store');
     return url.toString();
@@ -258,7 +266,7 @@ export async function createShopifyCart(item: { variantId: string; quantity: num
   const lineId = cart.lines.edges[0]?.node?.id;
   if (!lineId) return null;
 
-  return { cartId: cart.id, checkoutUrl: formatCheckoutUrl(cart.checkoutUrl), lineId };
+  return { cartId: cart.id, checkoutUrl: normalizeCheckoutUrl(cart.checkoutUrl), lineId };
 }
 
 export async function addLineToShopifyCart(cartId: string, item: { variantId: string; quantity: number }): Promise<{ success: boolean; lineId?: string; cartNotFound?: boolean }> {
