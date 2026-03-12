@@ -2,11 +2,11 @@ import ceoPaula from "@/assets/ceo-paula.png";
 
 const AboutPage = () => {
   return (
-    <main className="pt-24 pb-12">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="text-center mb-10">
-          <h1 className="heading-display text-4xl md:text-5xl text-foreground mb-4">About Khaleesi</h1>
-          <div className="w-16 h-px bg-primary mx-auto mt-4" />
+    <main className="pt-20 md:pt-24 pb-10 md:pb-12">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12">
+        <div className="text-center mb-8 md:mb-10">
+          <h1 className="heading-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-3 md:mb-4">About Khaleesi</h1>
+          <div className="w-16 h-px bg-primary mx-auto mt-3 md:mt-4" />
         </div>
 
         <div className="max-w-3xl mx-auto text-center mb-12">
@@ -22,7 +22,7 @@ const AboutPage = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-20">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto mb-14 md:mb-20">
           {[
             { title: "Craftsmanship", text: "Every fragrance is meticulously crafted by master perfumers using the finest natural ingredients." },
             { title: "Elegance", text: "Our designs embody timeless sophistication, from the bottle to the scent within." },
@@ -38,7 +38,7 @@ const AboutPage = () => {
         {/* CEO Section */}
         <div className="max-w-5xl mx-auto">
           <div className="w-16 h-px bg-primary mx-auto mb-10" />
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             <div className="overflow-hidden rounded-sm aspect-[3/4]">
               <img
                 src={ceoPaula}

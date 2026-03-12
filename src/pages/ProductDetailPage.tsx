@@ -60,9 +60,9 @@ const ProductDetailPage = () => {
   };
 
   return (
-    <main className="pt-24 lg:pt-28 pb-0">
+    <main className="pt-20 md:pt-24 lg:pt-28 pb-0">
       {/* Breadcrumb */}
-      <div className="container mx-auto px-6 lg:px-12 mb-8 lg:mb-12">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12 mb-5 md:mb-8 lg:mb-12">
         <Link
           to="/collection/fragrance"
           className="inline-flex items-center gap-1.5 text-xs font-body tracking-[0.2em] uppercase text-muted-foreground hover:text-primary transition-colors"
@@ -73,8 +73,8 @@ const ProductDetailPage = () => {
       </div>
 
       {/* Product Section */}
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-10 lg:gap-20">
           {/* Gallery */}
           <div className="space-y-4">
             <div className="aspect-[3/4] bg-card rounded overflow-hidden">
@@ -114,7 +114,7 @@ const ProductDetailPage = () => {
             <p className="font-body text-xs tracking-[0.35em] uppercase text-muted-foreground mb-4">
               Khaleesi
             </p>
-            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-foreground mb-6">
+            <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-foreground mb-4 md:mb-6">
               {node.title}
             </h1>
             <p className="font-heading text-2xl font-light text-foreground mb-8">
@@ -227,9 +227,9 @@ const ProductDetailPage = () => {
 
       {/* Related Products */}
       {filteredRelated && filteredRelated.length > 0 && (
-        <section className="bg-card mt-24 lg:mt-32">
-          <div className="container mx-auto px-6 lg:px-12 py-24">
-            <div className="text-center mb-14">
+        <section className="bg-card mt-12 md:mt-24 lg:mt-32">
+          <div className="container mx-auto px-4 md:px-6 lg:px-12 py-12 md:py-24">
+            <div className="text-center mb-8 md:mb-14">
               <p className="font-body text-xs tracking-[0.35em] uppercase text-muted-foreground mb-4">
                 You May Also Love
               </p>
@@ -238,7 +238,7 @@ const ProductDetailPage = () => {
               </h2>
               <div className="w-12 h-px bg-primary mx-auto mt-6" />
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
               {filteredRelated.map(p => (
                 <ProductCard key={p.node.id} product={p} />
               ))}

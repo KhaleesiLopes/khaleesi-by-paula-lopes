@@ -5,8 +5,8 @@ import mensFragrance from "@/assets/mens-fragrance.jpg";
 export const GenderCollections = () => {
   return (
     <section className="bg-card">
-      <div className="container mx-auto px-6 lg:px-12 py-12 lg:py-16">
-        <div className="grid md:grid-cols-2 gap-5">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12 py-8 md:py-12 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
           {/* Women's */}
           <Link
             to="/collection/fragrance?gender=women"
@@ -21,12 +21,12 @@ export const GenderCollections = () => {
               />
             </div>
             <div className="absolute inset-0 bg-black/20" />
-            <div className="absolute bottom-0 left-0 p-8 lg:p-10">
-              <h3 className="font-heading text-2xl md:text-3xl font-light text-white mb-4">
+            <div className="absolute bottom-0 left-0 p-5 md:p-8 lg:p-10">
+              <h3 className="font-heading text-xl md:text-2xl lg:text-3xl font-light text-white mb-3 md:mb-4">
                 Women's Fragrance
               </h3>
-              <span className="inline-block px-8 py-3 bg-[hsl(35,30%,55%)] text-white text-xs font-body font-medium tracking-[0.2em] uppercase transition-all group-hover:bg-[hsl(35,30%,45%)]">
-                Shop Women's Fragrance
+              <span className="inline-block px-5 md:px-8 py-2.5 md:py-3 bg-[hsl(35,30%,55%)] text-white text-[10px] md:text-xs font-body font-medium tracking-[0.2em] uppercase transition-all group-hover:bg-[hsl(35,30%,45%)]">
+                Shop Women's
               </span>
             </div>
           </Link>
@@ -45,12 +45,12 @@ export const GenderCollections = () => {
               />
             </div>
             <div className="absolute inset-0 bg-black/20" />
-            <div className="absolute bottom-0 left-0 p-8 lg:p-10">
-              <h3 className="font-heading text-2xl md:text-3xl font-light text-white mb-4">
+            <div className="absolute bottom-0 left-0 p-5 md:p-8 lg:p-10">
+              <h3 className="font-heading text-xl md:text-2xl lg:text-3xl font-light text-white mb-3 md:mb-4">
                 Men's Fragrance
               </h3>
-              <span className="inline-block px-8 py-3 bg-[hsl(35,30%,55%)] text-white text-xs font-body font-medium tracking-[0.2em] uppercase transition-all group-hover:bg-[hsl(35,30%,45%)]">
-                Shop Men's Fragrance
+              <span className="inline-block px-5 md:px-8 py-2.5 md:py-3 bg-[hsl(35,30%,55%)] text-white text-[10px] md:text-xs font-body font-medium tracking-[0.2em] uppercase transition-all group-hover:bg-[hsl(35,30%,45%)]">
+                Shop Men's
               </span>
             </div>
           </Link>

@@ -81,23 +81,23 @@ const CollectionPage = () => {
   return (
     <main className="pt-0 pb-0">
       {/* Collection Hero — split layout */}
-      <section className="relative grid md:grid-cols-2 min-h-[400px] lg:min-h-[500px] bg-foreground">
+      <section className="relative grid md:grid-cols-2 min-h-[280px] md:min-h-[400px] lg:min-h-[500px] bg-foreground">
         {/* Text panel */}
-        <div className="flex items-end p-8 lg:p-16 pb-12 lg:pb-16 order-2 md:order-1">
+        <div className="flex items-end p-5 md:p-8 lg:p-16 pb-8 md:pb-12 lg:pb-16 order-2 md:order-1">
           <div>
-            <p className="font-body text-xs tracking-[0.35em] uppercase text-background/60 mb-3">
+            <p className="font-body text-[10px] md:text-xs tracking-[0.35em] uppercase text-background/60 mb-2 md:mb-3">
               {gender ? "Shop" : "Explore"}
             </p>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-background mb-4">
+            <h1 className="font-heading text-3xl md:text-4xl lg:text-6xl font-light tracking-wide text-background mb-3 md:mb-4">
               {displayTitle}
             </h1>
-            <p className="font-body text-sm font-light tracking-wide text-background/70 max-w-sm">
+            <p className="font-body text-xs md:text-sm font-light tracking-wide text-background/70 max-w-sm">
               {displayDesc}
             </p>
           </div>
         </div>
         {/* Image panel */}
-        <div className="relative min-h-[300px] md:min-h-full order-1 md:order-2 overflow-hidden">
+        <div className="relative min-h-[200px] md:min-h-full order-1 md:order-2 overflow-hidden">
           <img
             src={heroImage}
             alt={displayTitle}
@@ -107,7 +107,7 @@ const CollectionPage = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="container mx-auto px-6 lg:px-12 py-10 lg:py-16">
+      <section className="container mx-auto px-4 md:px-6 lg:px-12 py-8 md:py-10 lg:py-16">
         {/* Product count */}
         {!isLoading && products && (
           <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-8">

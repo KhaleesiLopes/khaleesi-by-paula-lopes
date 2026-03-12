@@ -23,7 +23,7 @@ const footerLinks = {
 export const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-6 lg:px-12 py-12 lg:py-14">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12 py-10 md:py-12 lg:py-14">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
