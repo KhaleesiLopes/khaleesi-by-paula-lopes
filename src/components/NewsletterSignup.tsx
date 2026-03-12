@@ -15,7 +15,7 @@ export const NewsletterSignup = () => {
 
   return (
     <section className="bg-foreground">
-      <div className="container mx-auto px-6 lg:px-12 py-16 lg:py-20 text-center">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12 py-10 md:py-16 lg:py-20 text-center">
         <p className="font-body text-xs tracking-[0.35em] uppercase text-primary-foreground/60 mb-4">
           Stay in the Know
         </p>

@@ -14,7 +14,7 @@ const categories = [
 export const CategoryGrid = () => {
   return (
     <section className="bg-background">
-      <div className="container mx-auto px-6 lg:px-12 py-12 lg:py-16">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12 py-8 md:py-12 lg:py-16">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {categories.map(cat => (
             <Link key={cat.label} to={cat.to} className="group text-center">

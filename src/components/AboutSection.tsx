@@ -4,7 +4,7 @@ import aboutBrand from "@/assets/about-brand.jpg";
 export const AboutSection = () => {
   return (
     <section className="bg-card">
-      <div className="container mx-auto px-6 lg:px-12 py-12 lg:py-16">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12 py-8 md:py-12 lg:py-16">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
             <h2 className="font-heading text-3xl md:text-4xl font-light tracking-wide text-foreground mb-5">
