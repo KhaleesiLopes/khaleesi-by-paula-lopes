@@ -1,5 +1,6 @@
 import ambassadorDebora from "@/assets/ambassador-debora.jpg";
 import ambassadorMary from "@/assets/ambassador-mary.jpg";
+import ambassadorWaldira from "@/assets/ambassador-waldira.jpg";
 
 const ambassadors = [
   {
@@ -20,6 +21,16 @@ const ambassadors = [
       "Based in Glasgow, Scotland, Mary Ojo proudly represents the Khaleesi brand and its vision of confidence, elegance, and individuality. With a strong passion for fragrance and a natural ability to connect with people, she plays an important role in introducing Khaleesi perfumes to new audiences across the UK.",
       "Through her dedication and creativity, Mary helps grow the Khaleesi community by sharing her genuine experiences with our fragrances and building awareness of the brand. Her voice and presence help strengthen Khaleesi's international reach while reflecting the values and identity behind every scent we create.",
       "From Glasgow, Mary continues to support and represent Khaleesi, helping our brand reach new customers and fragrance lovers around the world.",
+    ],
+  },
+  {
+    name: "Waldira Liliana Silva",
+    location: "Edinburgh, Scotland",
+    image: ambassadorWaldira,
+    bio: [
+      "Based in Edinburgh, Scotland, Waldira Liliana Silva proudly represents Khaleesi as one of our official brand ambassadors. From the very beginning of the brand's journey, Waldira has been a strong supporter, standing beside her sister and believing in the vision behind Khaleesi.",
+      "Her values of loyalty, empowerment, family, and confidence align deeply with what Khaleesi represents. Waldira continues to champion the brand by sharing its message of individuality and bold self-expression while helping introduce Khaleesi to new audiences internationally.",
+      "Through her dedication and belief in the brand's mission, she embodies the heart of Khaleesi—strength, support, and empowering others to embrace who they are.",
     ],
   },
 ];
