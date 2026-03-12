@@ -2,11 +2,11 @@ import ceoPaula from "@/assets/ceo-paula.png";
 
 const AboutPage = () => {
   return (
-    <main className="pt-24 pb-12">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="text-center mb-10">
-          <h1 className="heading-display text-4xl md:text-5xl text-foreground mb-4">About Khaleesi</h1>
-          <div className="w-16 h-px bg-primary mx-auto mt-4" />
+    <main className="pt-20 md:pt-24 pb-10 md:pb-12">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12">
+        <div className="text-center mb-8 md:mb-10">
+          <h1 className="heading-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-3 md:mb-4">About Khaleesi</h1>
+          <div className="w-16 h-px bg-primary mx-auto mt-3 md:mt-4" />
         </div>
 
         <div className="max-w-3xl mx-auto text-center mb-12">
