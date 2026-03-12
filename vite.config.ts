@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+const config = {
   server: {
     host: "::",
     port: 8080,
@@ -12,10 +12,17 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: mode === "development" ? [react(), componentTagger()] : [react()],
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-}));
+};
+
+export default defineConfig(({ mode }) => {
+  if (mode === "development") {
+    config.plugins.push(componentTagger());
+  }
+  return config;
+});
