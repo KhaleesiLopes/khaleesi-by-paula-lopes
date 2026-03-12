@@ -5,7 +5,7 @@ const ambassadors = [
   {
     name: "Débora Vanessa Valdez",
     location: "Lisbon, Portugal",
-    image: ambassadorDebora,
+    image: ambassadorMary,
     bio: [
       "Based in Lisbon, Portugal, our ambassador represents the vision and spirit of Khaleesi in one of Europe's most vibrant cities. With a genuine passion for fragrance and creativity, she helps introduce Khaleesi perfumes to new audiences while embodying the elegance, confidence, and individuality behind the brand.",
       "Through her work and presence, she supports Khaleesi's growth by sharing authentic experiences with our fragrances, connecting with the community, and helping build awareness of our collection across Portugal and beyond. Her dedication and influence play an important role in expanding the Khaleesi brand internationally.",
