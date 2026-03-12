@@ -101,7 +101,7 @@ const CollectionPage = () => {
           <img
             src={heroImage}
             alt={displayTitle}
-            className="absolute inset-0 w-full h-full object-cover object-top"
+            className="absolute inset-0 w-full h-full object-cover object-center"
           />
         </div>
       </section>
