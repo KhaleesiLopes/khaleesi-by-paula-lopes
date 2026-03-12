@@ -1,7 +1,7 @@
 const ContactPage = () => {
   return (
-    <main className="pt-24 pb-12">
-      <div className="container mx-auto px-6 lg:px-12 max-w-3xl">
+    <main className="pt-20 md:pt-24 pb-10 md:pb-12">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12 max-w-3xl">
         <div className="text-center mb-10">
           <h1 className="heading-display text-4xl md:text-5xl text-foreground mb-4">Contact</h1>
           <p className="body-elegant text-muted-foreground">We'd love to hear from you</p>
