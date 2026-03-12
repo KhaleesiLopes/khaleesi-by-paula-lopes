@@ -2,7 +2,7 @@
 
 **Prepared for:** Paula Lopes  
 **Date:** March 2026  
-**Website:** [https://khaleesi-by-lopes.lovable.app](https://khaleesi-by-lopes.lovable.app)
+**Website:** [https://khaleesi.shop]
 
 ---
 
@@ -27,6 +27,7 @@
 Your **Khaleesi** website is a luxury fragrance and beauty e-commerce store. It showcases your products, brand story, ambassadors, and allows customers to browse, add items to their cart, and check out — all powered by **Shopify** for product and order management.
 
 **Key points:**
+
 - Your website automatically displays products from your Shopify store
 - When you add, edit, or remove products in Shopify, the website updates automatically — **no code changes needed**
 - Customer orders and payments are handled securely through Shopify's checkout
@@ -37,16 +38,16 @@ Your **Khaleesi** website is a luxury fragrance and beauty e-commerce store. It 
 
 Your website is built as a **static front-end application** that connects to your Shopify store via their Storefront API. Here's what that means in simple terms:
 
-| Component | What It Does | Where to Manage It |
-|-----------|-------------|-------------------|
-| **Website design & pages** | The look, layout, and content of your site | Lovable (code) |
-| **Products, prices, descriptions** | What products appear, their prices and details | Shopify Admin |
-| **Customer orders & payments** | Order processing, payment, shipping | Shopify Admin |
-| **Domain & publishing** | Where your site is hosted and accessible | Lovable |
+| Component                          | What It Does                                   | Where to Manage It |
+| ---------------------------------- | ---------------------------------------------- | ------------------ |
+| **Website design & pages**         | The look, layout, and content of your site     |
+| **Products, prices, descriptions** | What products appear, their prices and details | Shopify Admin      |
+| **Customer orders & payments**     | Order processing, payment, shipping            | Shopify Admin      |
+| **Domain & publishing**            | Where your site is hosted and accessible       |
 
 ### The Simple Rule:
-> **To change products, prices, or inventory → Go to Shopify**  
-> **To change website design or pages → Go to Lovable**
+
+> **To change products, prices, or inventory → Go to Shopify**
 
 ---
 
@@ -135,13 +136,7 @@ For products that come in multiple sizes (e.g., 50ml and 100ml):
 
 ### 4.1 Your Website URL
 
-Your website is live at: **[https://khaleesi-by-lopes.lovable.app](https://khaleesi-by-lopes.lovable.app)**
-
-### 4.2 Custom Domain
-
-If you want to use a custom domain (e.g., `www.khaleesibypaulalopes.com`), this can be set up in the Lovable project settings under **Settings → Domains**.
-
-> A paid Lovable plan is required for custom domains.
+Your website is live at: **[https://khaleesi.shop](https://khaleesi.shop)**
 
 ---
 
@@ -149,17 +144,18 @@ If you want to use a custom domain (e.g., `www.khaleesibypaulalopes.com`), this 
 
 Your website has the following pages:
 
-| Page | URL Path | Description |
-|------|----------|-------------|
-| **Home** | `/` | Hero banner, featured products, categories, brand gallery |
-| **Collection** | `/collection/fragrance`, `/collection/makeup`, etc. | Product listings by category |
-| **Product Detail** | `/product/[product-name]` | Individual product page with images, description, variants, and "Add to Cart" |
-| **About** | `/about` | Brand story, values, and your CEO bio |
-| **Ambassadors** | `/ambassadors` | Brand ambassador profiles (Débora, Mary, Waldira) |
-| **FAQ** | `/faq` | Frequently asked questions |
-| **Contact** | `/contact` | Contact information |
+| Page               | URL Path                                            | Description                                                                   |
+| ------------------ | --------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **Home**           | `/`                                                 | Hero banner, featured products, categories, brand gallery                     |
+| **Collection**     | `/collection/fragrance`, `/collection/makeup`, etc. | Product listings by category                                                  |
+| **Product Detail** | `/product/[product-name]`                           | Individual product page with images, description, variants, and "Add to Cart" |
+| **About**          | `/about`                                            | Brand story, values, and your CEO bio                                         |
+| **Ambassadors**    | `/ambassadors`                                      | Brand ambassador profiles (Débora, Mary, Waldira)                             |
+| **FAQ**            | `/faq`                                              | Frequently asked questions                                                    |
+| **Contact**        | `/contact`                                          | Contact information                                                           |
 
 ### Cart & Checkout Flow
+
 1. Customer browses products
 2. Clicks **"Add to Cart"** → item appears in cart drawer
 3. Clicks **"Checkout"** → redirected to **Shopify's secure checkout page**
@@ -170,10 +166,11 @@ Your website has the following pages:
 ## 6. Social Media Links
 
 Currently configured in the website footer:
+
 - **Instagram:** [@khaleesi_pl](https://www.instagram.com/khaleesi_pl)
 - **Facebook:** Not yet linked (currently points to `#`)
 
-> To update social links, a code change in Lovable is needed, or you can ask your developer.
+>
 
 ---
 
@@ -181,13 +178,13 @@ Currently configured in the website footer:
 
 For some products, the website uses specially designed high-quality images instead of the Shopify product photos. These are currently set up for:
 
-| Product | Custom Image Used |
-|---------|------------------|
-| Velvet Bloom | `product-velvet-bloom.jpg` |
-| Insprezione 100ml | `product-inspreazione-100ml.jpg` |
-| Insprezione 50ml | `product-inspirazione-50ml.jpg` |
-| Rose | `product-rose.jpg` |
-| Khal Eau de Parfum | `product-khal.jpg` |
+| Product            | Custom Image Used                |
+| ------------------ | -------------------------------- |
+| Velvet Bloom       | `product-velvet-bloom.jpg`       |
+| Insprezione 100ml  | `product-inspreazione-100ml.jpg` |
+| Insprezione 50ml   | `product-inspirazione-50ml.jpg`  |
+| Rose               | `product-rose.jpg`               |
+| Khal Eau de Parfum | `product-khal.jpg`               |
 
 **Important:** If you rename these products in Shopify, the custom images may stop matching. Keep the product titles consistent, or ask your developer to update the image mapping.
 
@@ -212,6 +209,7 @@ khaleesi-website/
 ```
 
 ### Key Files (for a developer):
+
 - `src/lib/shopify.ts` — Shopify API connection settings
 - `src/lib/productImageOverrides.ts` — Custom product image mappings
 - `src/stores/cartStore.ts` — Cart and checkout logic
@@ -219,6 +217,7 @@ khaleesi-website/
 - `src/index.css` — Brand colours and design tokens
 
 ### To Run Locally (for a developer):
+
 ```bash
 npm install
 npm run dev
@@ -230,24 +229,20 @@ Requires environment variables (see Section 9).
 
 ## 9. Account & Login Details
 
-### Lovable (Website Builder)
-- **URL:** [https://lovable.dev](https://lovable.dev)
 - **Email:** `khaleesibypaulalopes@gmail.com`
-- **Password:** *(shared separately for security — do not store in plain text)*
+- **Password:** _(shared separately for security — do not store in plain text)_
 - **Project:** Khaleesi by Lopes
 
 ### Shopify (Product & Order Management)
+
 - **Admin URL:** [https://admin.shopify.com/store/fcd20t-gd](https://admin.shopify.com/store/fcd20t-gd)
 - **Store Domain:** `fcd20t-gd.myshopify.com`
 - Login with the same credentials or the Shopify account credentials
 
-### Environment Variables (Technical)
-These are configured in Lovable's project secrets and are needed if running the code locally:
-
-| Variable | Purpose |
-|----------|---------|
-| `VITE_SHOPIFY_STORE_DOMAIN` | Your Shopify store domain (`fcd20t-gd.myshopify.com`) |
-| `VITE_SHOPIFY_STOREFRONT_TOKEN` | API token for reading products (stored securely in Lovable) |
+| Variable                        | Purpose                                               |
+| ------------------------------- | ----------------------------------------------------- |
+| `VITE_SHOPIFY_STORE_DOMAIN`     | Your Shopify store domain (`fcd20t-gd.myshopify.com`) |
+| `VITE_SHOPIFY_STOREFRONT_TOKEN` | API token for reading products                        |
 
 > These are already configured. You don't need to change them unless you connect a different Shopify store.
 
@@ -256,34 +251,23 @@ These are configured in Lovable's project secrets and are needed if running the 
 ## 10. Frequently Asked Questions
 
 ### "I added a product in Shopify but it's not showing on my website"
+
 - Make sure the product **Status** is set to **"Active"** in Shopify
 - Wait a few minutes — it may take a moment to appear
 - Try refreshing the website page
 
-### "I want to change the website design or layout"
-- This requires changes in the Lovable project (code)
-- Log into [lovable.dev](https://lovable.dev) and open your project
-- You can use the AI chat to request design changes
-
-### "I want to add a new page"
-- Log into Lovable and ask the AI to create a new page for you
-
-### "Can I change the brand colours?"
-- Yes, through Lovable. The brand colours are defined in the project's design system
-
 ### "How do customers pay?"
+
 - Customers are redirected to Shopify's secure checkout
 - Payment methods are configured in your Shopify Admin under **Settings → Payments**
 
 ### "How do I handle shipping?"
+
 - Shipping settings are managed in Shopify Admin under **Settings → Shipping and delivery**
 
 ### "How do I see my orders?"
-- Go to your Shopify Admin → **Orders** to see all customer orders
 
-### "I want to offer a discount code"
-- Go to Shopify Admin → **Discounts** → **Create discount**
-- Or ask your developer to create one through Lovable
+- Go to your Shopify Admin → **Orders** to see all customer orders
 
 ---
 
@@ -291,8 +275,6 @@ These are configured in Lovable's project secrets and are needed if running the 
 
 For **product and order** questions → Use Shopify's help resources at [help.shopify.com](https://help.shopify.com)
 
-For **website design changes** → Log into [lovable.dev](https://lovable.dev) and use the AI chat, or contact your developer
-
 ---
 
-*This document was prepared as part of the Khaleesi by Paula Lopes website project handover.*
+_This document was prepared as part of the Khaleesi by Paula Lopes website project handover._
