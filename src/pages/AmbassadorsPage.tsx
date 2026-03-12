@@ -37,19 +37,19 @@ const ambassadors = [
 
 const AmbassadorsPage = () => {
   return (
-    <main className="pt-24 pb-16">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="text-center mb-14">
-          <h1 className="heading-display text-4xl md:text-5xl text-foreground mb-4">
+    <main className="pt-20 md:pt-24 pb-12 md:pb-16">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12">
+        <div className="text-center mb-10 md:mb-14">
+          <h1 className="heading-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-3 md:mb-4">
             Brand Ambassadors
           </h1>
-          <p className="body-elegant text-muted-foreground max-w-xl mx-auto">
+          <p className="body-elegant text-muted-foreground max-w-xl mx-auto text-sm md:text-base">
             Meet the faces who embody the spirit, elegance, and confidence of Khaleesi around the world.
           </p>
-          <div className="w-16 h-px bg-primary mx-auto mt-6" />
+          <div className="w-16 h-px bg-primary mx-auto mt-5 md:mt-6" />
         </div>
 
-        <div className="space-y-24 max-w-5xl mx-auto">
+        <div className="space-y-14 md:space-y-24 max-w-5xl mx-auto">
           {ambassadors.map((ambassador, index) => (
             <div
               key={ambassador.name}
