@@ -53,7 +53,7 @@ const AmbassadorsPage = () => {
           {ambassadors.map((ambassador, index) => (
             <div
               key={ambassador.name}
-              className={`grid md:grid-cols-2 gap-10 lg:gap-16 items-center ${
+              className={`grid md:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-center ${
                 index % 1 === 1 ? "md:direction-rtl" : ""
               }`}
             >

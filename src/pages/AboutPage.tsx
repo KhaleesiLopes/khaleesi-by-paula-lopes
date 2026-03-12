@@ -38,7 +38,7 @@ const AboutPage = () => {
         {/* CEO Section */}
         <div className="max-w-5xl mx-auto">
           <div className="w-16 h-px bg-primary mx-auto mb-10" />
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             <div className="overflow-hidden rounded-sm aspect-[3/4]">
               <img
                 src={ceoPaula}
