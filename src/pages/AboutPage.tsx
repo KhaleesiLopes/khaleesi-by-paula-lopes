@@ -1,4 +1,3 @@
-import aboutBrand from "@/assets/about-brand.jpg";
 import ceoPaula from "@/assets/ceo-paula.png";
 
 const AboutPage = () => {
@@ -10,22 +9,17 @@ const AboutPage = () => {
           <div className="w-16 h-px bg-primary mx-auto mt-4" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto mb-12">
-          <div>
-            <h2 className="heading-serif text-2xl text-foreground mb-6">Our Story</h2>
-            <p className="body-elegant text-muted-foreground mb-4">
-              Khaleesi is a luxury fragrance and beauty brand dedicated to elegance, confidence, and timeless beauty.
-            </p>
-            <p className="body-elegant text-muted-foreground mb-4">
-              Our fragrances and cosmetics are designed to elevate your everyday experience, combining the finest ingredients with artisan craftsmanship.
-            </p>
-            <p className="body-elegant text-muted-foreground">
-              Each scent tells a story — of strength, grace, and the quiet power of self-expression.
-            </p>
-          </div>
-          <div className="rounded overflow-hidden">
-            <img src={aboutBrand} alt="About Khaleesi" className="w-full h-auto object-cover" />
-          </div>
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="heading-serif text-2xl text-foreground mb-6">Our Story</h2>
+          <p className="body-elegant text-muted-foreground mb-4">
+            Khaleesi is a luxury fragrance and beauty brand dedicated to elegance, confidence, and timeless beauty.
+          </p>
+          <p className="body-elegant text-muted-foreground mb-4">
+            Our fragrances and cosmetics are designed to elevate your everyday experience, combining the finest ingredients with artisan craftsmanship.
+          </p>
+          <p className="body-elegant text-muted-foreground">
+            Each scent tells a story — of strength, grace, and the quiet power of self-expression.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-20">
