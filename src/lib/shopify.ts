@@ -85,6 +85,10 @@ export async function storefrontApiRequest(query: string, variables: Record<stri
     throw new Error('Shopify rate limit reached. Please retry in a few seconds.');
   }
 
+  if (response.status === 401 || response.status === 403) {
+    throw new Error('Storefront token/domain authorization issue. Check VITE_SHOPIFY_STORE_DOMAIN and VITE_SHOPIFY_STOREFRONT_TOKEN.');
+  }
+
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }

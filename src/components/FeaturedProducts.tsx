@@ -2,7 +2,7 @@ import { useShopifyProducts } from "@/hooks/useShopifyProducts";
 import { ProductCard } from "@/components/ProductCard";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, RefreshCw } from "lucide-react";
 
 const ProductSkeleton = () => (
   <div className="flex flex-col">
@@ -12,7 +12,7 @@ const ProductSkeleton = () => (
   </div>
 );
 
-const FallbackCTA = () => (
+const FallbackCTA = ({ onRetry }: { onRetry?: () => void }) => (
   <div className="flex flex-col items-center justify-center py-16 md:py-24 text-center">
     <h3 className="font-heading text-xl md:text-2xl font-light text-foreground mb-3">
       Discover Our Collection
@@ -20,18 +20,29 @@ const FallbackCTA = () => (
     <p className="font-body text-sm text-muted-foreground mb-8 max-w-md">
       Explore our curated selection of luxury fragrances, crafted to captivate.
     </p>
-    <Link
-      to="/collection/fragrance"
-      className="inline-flex items-center gap-2 px-8 py-3 border border-foreground text-foreground text-[11px] font-body font-medium tracking-[0.25em] uppercase transition-colors hover:bg-foreground hover:text-background"
-    >
-      Shop Fragrances
-      <ArrowRight className="w-3.5 h-3.5" />
-    </Link>
+    <div className="flex flex-col sm:flex-row gap-4 items-center">
+      <Link
+        to="/collection/fragrance"
+        className="inline-flex items-center gap-2 px-8 py-3 border border-foreground text-foreground text-[11px] font-body font-medium tracking-[0.25em] uppercase transition-colors hover:bg-foreground hover:text-background"
+      >
+        Shop Fragrances
+        <ArrowRight className="w-3.5 h-3.5" />
+      </Link>
+      {onRetry && (
+        <button
+          onClick={onRetry}
+          className="inline-flex items-center gap-2 px-6 py-3 text-[11px] font-body font-medium tracking-[0.25em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <RefreshCw className="w-3.5 h-3.5" />
+          Retry
+        </button>
+      )}
+    </div>
   </div>
 );
 
 export const FeaturedProducts = () => {
-  const { data: products, isLoading, error, isPlaceholderData } = useShopifyProducts(8);
+  const { data: products, isLoading, refetch } = useShopifyProducts(8);
 
   const hasProducts = products && products.length > 0;
   const showSkeletons = isLoading && !hasProducts;
@@ -55,7 +66,7 @@ export const FeaturedProducts = () => {
         )}
 
         {!showSkeletons && !hasProducts && (
-          <FallbackCTA />
+          <FallbackCTA onRetry={() => refetch()} />
         )}
 
         {hasProducts && (
