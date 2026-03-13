@@ -51,20 +51,38 @@ export interface ShopifyProduct {
 }
 
 export async function storefrontApiRequest(query: string, variables: Record<string, unknown> = {}) {
-  const response = await fetch(SHOPIFY_STOREFRONT_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Shopify-Storefront-Access-Token': SHOPIFY_STOREFRONT_TOKEN,
-    },
-    body: JSON.stringify({ query, variables }),
-  });
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), STOREFRONT_TIMEOUT_MS);
+
+  let response: Response;
+  try {
+    response = await fetch(SHOPIFY_STOREFRONT_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': SHOPIFY_STOREFRONT_TOKEN,
+      },
+      body: JSON.stringify({ query, variables }),
+      signal: controller.signal,
+    });
+  } catch (error) {
+    if (error instanceof Error && error.name === 'AbortError') {
+      throw new Error('Shopify request timed out. Please retry.');
+    }
+    throw new Error('Could not connect to Shopify. Please check your connection and retry.');
+  } finally {
+    clearTimeout(timeoutId);
+  }
 
   if (response.status === 402) {
     toast.error("Shopify: Payment required", {
       description: "Your Shopify store needs an active billing plan. Visit https://admin.shopify.com to upgrade.",
     });
     return;
+  }
+
+  if (response.status === 429) {
+    throw new Error('Shopify rate limit reached. Please retry in a few seconds.');
   }
 
   if (!response.ok) {

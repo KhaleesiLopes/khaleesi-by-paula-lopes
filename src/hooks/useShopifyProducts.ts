@@ -28,6 +28,7 @@ export function useShopifyProductByHandle(handle: string) {
       // Wrap in ShopifyProduct format
       return { node: product } as ShopifyProduct;
     },
+    networkMode: 'always',
     enabled: !!handle,
   });
 }
