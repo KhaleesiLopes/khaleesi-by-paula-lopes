@@ -100,7 +100,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <button
           onClick={handleAddToBag}
           disabled={isLoading || !firstVariant?.availableForSale}
-          className="lg:hidden w-full mt-auto py-2.5 border border-foreground text-foreground text-[10px] font-body font-medium tracking-[0.25em] uppercase transition-colors hover:bg-foreground hover:text-background disabled:opacity-50 disabled:cursor-not-allowed"
+          className="md:hidden w-full mt-auto py-2.5 border border-foreground text-foreground text-[10px] font-body font-medium tracking-[0.25em] uppercase transition-colors hover:bg-foreground hover:text-background disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin mx-auto" /> : "Add to Bag"}
         </button>
