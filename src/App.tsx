@@ -39,7 +39,7 @@ const AppContent = () => {
 
   return (
     <>
-      <Header onCartOpen={() => setCartOpen(true)} />
+      <Header onCartOpen={() => { clearTimeout(autoCloseTimer.current); setCartOpen(true); }} />
       <CartDrawer open={cartOpen} onOpenChange={setCartOpen} />
       <Routes>
         <Route path="/" element={<Index />} />
