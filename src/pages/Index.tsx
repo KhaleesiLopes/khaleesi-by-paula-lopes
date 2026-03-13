@@ -10,6 +10,10 @@ import { NewsletterSignup } from "@/components/NewsletterSignup";
 const Index = () => {
   return (
     <main>
+      {/* TEMP MARKER — remove after verifying publish */}
+      <div className="bg-red-600 text-white text-center py-2 text-xs font-bold tracking-widest z-50">
+        ✅ BUILD v2 — PUBLISH VERIFIED
+      </div>
       <HeroSection />
       <GenderCollections />
       <CategoryGrid />
