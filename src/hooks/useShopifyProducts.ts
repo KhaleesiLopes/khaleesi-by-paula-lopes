@@ -39,19 +39,29 @@ export function useShopifyProducts(first = 50, searchQuery?: string) {
   return useQuery({
     queryKey: ['shopify-products', first, searchQuery],
     queryFn: async () => {
-      const data = await storefrontApiRequest(STOREFRONT_PRODUCTS_QUERY, {
-        first,
-        query: searchQuery || null,
-      });
-      const products = (data?.data?.products?.edges || []) as ShopifyProduct[];
-      if (products.length > 0) {
-        setCachedProducts(cacheId, products);
+      try {
+        const data = await storefrontApiRequest(STOREFRONT_PRODUCTS_QUERY, {
+          first,
+          query: searchQuery || null,
+        });
+        const products = (data?.data?.products?.edges || []) as ShopifyProduct[];
+        if (products.length > 0) {
+          setCachedProducts(cacheId, products);
+        }
+        return products;
+      } catch (error) {
+        // On failure, return cached products instead of throwing
+        const fallback = getCachedProducts(cacheId);
+        if (fallback && fallback.length > 0) {
+          console.warn('Shopify fetch failed, using cached products:', error);
+          return fallback;
+        }
+        throw error;
       }
-      return products;
     },
     networkMode: 'always',
-    retry: 3,
-    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 10000),
+    retry: 2,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 5000),
     staleTime: 5 * 60 * 1000,
     placeholderData: cached,
   });

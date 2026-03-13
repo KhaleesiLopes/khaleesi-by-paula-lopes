@@ -1,9 +1,9 @@
 import { toast } from "sonner";
 
 const SHOPIFY_API_VERSION = '2025-07';
-const SHOPIFY_STORE_PERMANENT_DOMAIN = import.meta.env.VITE_SHOPIFY_STORE_DOMAIN;
+const SHOPIFY_STORE_PERMANENT_DOMAIN = import.meta.env.VITE_SHOPIFY_STORE_DOMAIN || 'fcd20t-gd.myshopify.com';
 const SHOPIFY_STOREFRONT_URL = `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}/api/${SHOPIFY_API_VERSION}/graphql.json`;
-const SHOPIFY_STOREFRONT_TOKEN = import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN;
+const SHOPIFY_STOREFRONT_TOKEN = import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN || 'c77d699c04a81dd1db8183c0c1ef4cb7';
 const STOREFRONT_TIMEOUT_MS = 15000;
 
 export interface ShopifyProduct {
@@ -83,6 +83,10 @@ export async function storefrontApiRequest(query: string, variables: Record<stri
 
   if (response.status === 429) {
     throw new Error('Shopify rate limit reached. Please retry in a few seconds.');
+  }
+
+  if (response.status === 401 || response.status === 403) {
+    throw new Error('Storefront token/domain authorization issue. Check VITE_SHOPIFY_STORE_DOMAIN and VITE_SHOPIFY_STOREFRONT_TOKEN.');
   }
 
   if (!response.ok) {
