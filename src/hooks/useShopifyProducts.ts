@@ -11,6 +11,7 @@ export function useShopifyProducts(first = 50, searchQuery?: string) {
       });
       return (data?.data?.products?.edges || []) as ShopifyProduct[];
     },
+    networkMode: 'always',
     retry: 3,
     retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 10000),
     staleTime: 5 * 60 * 1000,
