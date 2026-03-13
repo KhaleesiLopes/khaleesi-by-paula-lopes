@@ -24,7 +24,13 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
   const handleCheckout = async () => {
     await syncCart();
     const checkoutUrl = getCheckoutUrl();
-    if (!checkoutUrl) return;
+    if (!checkoutUrl) {
+      toast.error("Unable to proceed to checkout", {
+        description: "Please try clearing your bag and adding items again.",
+        position: "top-center",
+      });
+      return;
+    }
 
     const safeCheckoutUrl = normalizeCheckoutUrl(checkoutUrl);
     const checkoutWindow = window.open(safeCheckoutUrl, '_blank', 'noopener,noreferrer');
@@ -33,6 +39,11 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
     }
 
     onOpenChange(false);
+  };
+
+  const handleClearCart = () => {
+    clearCart();
+    toast.success("Bag cleared", { position: "top-center" });
   };
 
   return (
