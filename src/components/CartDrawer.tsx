@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "sonner";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ShoppingBag, Minus, Plus, X, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
@@ -11,7 +12,7 @@ interface CartDrawerProps {
 }
 
 export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
-  const { items, isLoading, isSyncing, updateQuantity, removeItem, getCheckoutUrl, syncCart } = useCartStore();
+  const { items, isLoading, isSyncing, updateQuantity, removeItem, getCheckoutUrl, syncCart, clearCart } = useCartStore();
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
 
@@ -24,7 +25,13 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
   const handleCheckout = async () => {
     await syncCart();
     const checkoutUrl = getCheckoutUrl();
-    if (!checkoutUrl) return;
+    if (!checkoutUrl) {
+      toast.error("Unable to proceed to checkout", {
+        description: "Please try clearing your bag and adding items again.",
+        position: "top-center",
+      });
+      return;
+    }
 
     const safeCheckoutUrl = normalizeCheckoutUrl(checkoutUrl);
     const checkoutWindow = window.open(safeCheckoutUrl, '_blank', 'noopener,noreferrer');
@@ -33,6 +40,11 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
     }
 
     onOpenChange(false);
+  };
+
+  const handleClearCart = () => {
+    clearCart();
+    toast.success("Bag cleared", { position: "top-center" });
   };
 
   return (
@@ -170,12 +182,20 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
                     "Proceed to Checkout"
                   )}
                 </button>
-                <button
-                  onClick={() => onOpenChange(false)}
-                  className="w-full py-3 text-xs font-body tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Continue Shopping
-                </button>
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => onOpenChange(false)}
+                    className="flex-1 py-3 text-xs font-body tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Continue Shopping
+                  </button>
+                  <button
+                    onClick={handleClearCart}
+                    className="py-3 px-4 text-xs font-body tracking-[0.15em] uppercase text-destructive hover:text-destructive/80 transition-colors"
+                  >
+                    Clear Bag
+                  </button>
+                </div>
               </div>
             </>
           )}
