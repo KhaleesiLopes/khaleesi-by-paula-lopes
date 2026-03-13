@@ -1,10 +1,40 @@
 import { useShopifyProducts } from "@/hooks/useShopifyProducts";
 import { ProductCard } from "@/components/ProductCard";
-import { Loader2 } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+
+const ProductSkeleton = () => (
+  <div className="flex flex-col">
+    <Skeleton className="aspect-[3/4] w-full mb-3 md:mb-5" />
+    <Skeleton className="h-4 w-3/4 mb-2" />
+    <Skeleton className="h-3 w-1/3" />
+  </div>
+);
+
+const FallbackCTA = () => (
+  <div className="flex flex-col items-center justify-center py-16 md:py-24 text-center">
+    <h3 className="font-heading text-xl md:text-2xl font-light text-foreground mb-3">
+      Discover Our Collection
+    </h3>
+    <p className="font-body text-sm text-muted-foreground mb-8 max-w-md">
+      Explore our curated selection of luxury fragrances, crafted to captivate.
+    </p>
+    <Link
+      to="/collection/fragrance"
+      className="inline-flex items-center gap-2 px-8 py-3 border border-foreground text-foreground text-[11px] font-body font-medium tracking-[0.25em] uppercase transition-colors hover:bg-foreground hover:text-background"
+    >
+      Shop Fragrances
+      <ArrowRight className="w-3.5 h-3.5" />
+    </Link>
+  </div>
+);
 
 export const FeaturedProducts = () => {
-  const { data: products, isLoading, error } = useShopifyProducts(8);
+  const { data: products, isLoading, error, isPlaceholderData } = useShopifyProducts(8);
+
+  const hasProducts = products && products.length > 0;
+  const showSkeletons = isLoading && !hasProducts;
 
   return (
     <section className="bg-card">
@@ -16,28 +46,19 @@ export const FeaturedProducts = () => {
           <div className="w-12 h-px bg-primary mx-auto mt-6" />
         </div>
 
-        {isLoading && (
-          <div className="flex justify-center py-20">
-            <Loader2 className="w-8 h-8 animate-spin text-primary" />
+        {showSkeletons && (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mx-auto">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <ProductSkeleton key={i} />
+            ))}
           </div>
         )}
 
-        {error && (
-          <p className="text-center text-muted-foreground font-body">
-            Unable to load products at this time.
-          </p>
+        {!showSkeletons && !hasProducts && (
+          <FallbackCTA />
         )}
 
-        {!isLoading && !error && products && products.length === 0 && (
-          <div className="text-center py-20">
-            <p className="font-body text-muted-foreground text-lg mb-2">No products found</p>
-            <p className="font-body text-muted-foreground text-sm">
-              Products will appear here once added to the Shopify store.
-            </p>
-          </div>
-        )}
-
-        {products && products.length > 0 && (
+        {hasProducts && (
           <div className={`grid gap-4 md:gap-8 ${
             products.length === 1 ? "grid-cols-1 max-w-xs" :
             products.length === 2 ? "grid-cols-2 max-w-2xl" :
