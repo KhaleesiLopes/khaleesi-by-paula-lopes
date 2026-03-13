@@ -11,8 +11,8 @@ const Index = () => {
   return (
     <main>
       {/* TEMP MARKER — remove after verifying publish */}
-      <div className="bg-red-600 text-white text-center py-2 text-xs font-bold tracking-widest z-50">
-        ✅ BUILD v2 — PUBLISH VERIFIED
+      <div style={{ background: '#ff0000', color: '#ffffff', textAlign: 'center', padding: '12px', fontSize: '16px', fontWeight: 'bold', letterSpacing: '2px', position: 'relative', zIndex: 9999 }}>
+        ✅ BUILD v3 — PUBLISH VERIFIED
       </div>
       <HeroSection />
       <GenderCollections />
