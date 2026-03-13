@@ -182,12 +182,20 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
                     "Proceed to Checkout"
                   )}
                 </button>
-                <button
-                  onClick={() => onOpenChange(false)}
-                  className="w-full py-3 text-xs font-body tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Continue Shopping
-                </button>
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => onOpenChange(false)}
+                    className="flex-1 py-3 text-xs font-body tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Continue Shopping
+                  </button>
+                  <button
+                    onClick={handleClearCart}
+                    className="py-3 px-4 text-xs font-body tracking-[0.15em] uppercase text-destructive hover:text-destructive/80 transition-colors"
+                  >
+                    Clear Bag
+                  </button>
+                </div>
               </div>
             </>
           )}
