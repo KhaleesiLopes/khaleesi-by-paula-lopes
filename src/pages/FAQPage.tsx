@@ -6,7 +6,7 @@ const faqs = [
   { q: "Are your products cruelty-free?", a: "Yes, all Khaleesi products are cruelty-free and never tested on animals." },
   { q: "How do I track my order?", a: "Once your order ships, you will receive a tracking number via email." },
   { q: "Do you offer gift wrapping?", a: "Yes, we offer luxury gift wrapping for a small additional fee at checkout." },
-  { q: "How can I contact customer support?", a: "You can reach us via our Contact page or email us at support@khalessi.shop." },
+  { q: "How can I contact customer support?", a: "You can reach us via our Contact page or email us at khaleesibypaulalopes@gmail.com." },
 ];
 
 const FAQPage = () => {
