@@ -44,14 +44,14 @@ export const useCartStore = create<CartStore>()(
       isLoading: false,
       isSyncing: false,
 
-      addItem: async (item) => {
+      addItem: async (item, country = 'GB') => {
         const { items, cartId, clearCart } = get();
         const existingItem = items.find(i => i.variantId === item.variantId);
 
         set({ isLoading: true });
         try {
           if (!cartId) {
-            const result = await createShopifyCart({ variantId: item.variantId, quantity: item.quantity });
+            const result = await createShopifyCart({ variantId: item.variantId, quantity: item.quantity }, country);
             if (result) {
               set({
                 cartId: result.cartId,
