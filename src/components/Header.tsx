@@ -9,6 +9,7 @@ const navLinksLeft = [
   { label: "Makeup", to: "/collection/makeup" },
   { label: "Skincare", to: "/collection/skincare" },
   { label: "Spa", to: "/collection/spa" },
+  { label: "Accessories", to: "/collection/accessories" },
 ];
 
 const navLinksRight = [
