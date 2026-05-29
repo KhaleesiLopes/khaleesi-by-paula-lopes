@@ -8,11 +8,11 @@ const navLinksLeft = [
   { label: "Fragrance", to: "/collection/fragrance" },
   { label: "Makeup", to: "/collection/makeup" },
   { label: "Skincare", to: "/collection/skincare" },
-  { label: "Spa", to: "/collection/spa" },
-  { label: "Accessories", to: "/collection/accessories" },
 ];
 
 const navLinksRight = [
+  { label: "Spa", to: "/collection/spa" },
+  { label: "Accessories", to: "/collection/accessories" },
   { label: "Ambassadors", to: "/ambassadors" },
   { label: "About", to: "/about" },
 ];
