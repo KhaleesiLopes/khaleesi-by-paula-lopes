@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { storefrontApiRequest, STOREFRONT_PRODUCTS_QUERY, STOREFRONT_PRODUCT_BY_HANDLE_QUERY, type ShopifyProduct } from '@/lib/shopify';
+import { useCurrency } from '@/contexts/CurrencyContext';
 
 const CACHE_KEY = 'khaleesi-products-cache';
-const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
 
 interface CachedProducts {
   products: ShopifyProduct[];
@@ -16,7 +16,6 @@ function getCachedProducts(queryKey: string): ShopifyProduct[] | undefined {
     if (!raw) return undefined;
     const cached: CachedProducts = JSON.parse(raw);
     if (cached.queryKey !== queryKey) return undefined;
-    // Return cache even if stale — it's a fallback
     return cached.products;
   } catch {
     return undefined;
@@ -33,16 +32,18 @@ function setCachedProducts(queryKey: string, products: ShopifyProduct[]) {
 }
 
 export function useShopifyProducts(first = 50, searchQuery?: string) {
-  const cacheId = `${first}-${searchQuery || ''}`;
+  const { country } = useCurrency();
+  const cacheId = `${first}-${searchQuery || ''}-${country}`;
   const cached = getCachedProducts(cacheId);
 
   return useQuery({
-    queryKey: ['shopify-products', first, searchQuery],
+    queryKey: ['shopify-products', first, searchQuery, country],
     queryFn: async () => {
       try {
         const data = await storefrontApiRequest(STOREFRONT_PRODUCTS_QUERY, {
           first,
           query: searchQuery || null,
+          country,
         });
         const products = (data?.data?.products?.edges || []) as ShopifyProduct[];
         if (products.length > 0) {
@@ -50,7 +51,6 @@ export function useShopifyProducts(first = 50, searchQuery?: string) {
         }
         return products;
       } catch (error) {
-        // On failure, return cached products instead of throwing
         const fallback = getCachedProducts(cacheId);
         if (fallback && fallback.length > 0) {
           console.warn('Shopify fetch failed, using cached products:', error);
@@ -68,10 +68,11 @@ export function useShopifyProducts(first = 50, searchQuery?: string) {
 }
 
 export function useShopifyProductByHandle(handle: string) {
+  const { country } = useCurrency();
   return useQuery({
-    queryKey: ['shopify-product', handle],
+    queryKey: ['shopify-product', handle, country],
     queryFn: async () => {
-      const data = await storefrontApiRequest(STOREFRONT_PRODUCT_BY_HANDLE_QUERY, { handle });
+      const data = await storefrontApiRequest(STOREFRONT_PRODUCT_BY_HANDLE_QUERY, { handle, country });
       const product = data?.data?.productByHandle;
       if (!product) return null;
       return { node: product } as ShopifyProduct;
