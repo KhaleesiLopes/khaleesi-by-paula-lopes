@@ -286,9 +286,10 @@ function isCartNotFoundError(userErrors: Array<{ field: string[] | null; message
   return userErrors.some(e => e.message.toLowerCase().includes('cart not found') || e.message.toLowerCase().includes('does not exist'));
 }
 
-export async function createShopifyCart(item: { variantId: string; quantity: number }): Promise<{ cartId: string; checkoutUrl: string; lineId: string } | null> {
+export async function createShopifyCart(item: { variantId: string; quantity: number }, country = "GB"): Promise<{ cartId: string; checkoutUrl: string; lineId: string } | null> {
   const data = await storefrontApiRequest(CART_CREATE_MUTATION, {
     input: { lines: [{ quantity: item.quantity, merchandiseId: item.variantId }] },
+    country,
   });
 
   if (data?.data?.cartCreate?.userErrors?.length > 0) {
