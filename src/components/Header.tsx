@@ -165,6 +165,9 @@ export const Header = ({ onCartOpen }: HeaderProps) => {
                 {link.label}
               </Link>
             ))}
+            <div className="pt-6 mt-2">
+              <CurrencySwitcher variant="mobile" />
+            </div>
           </nav>
         </div>
       )}
