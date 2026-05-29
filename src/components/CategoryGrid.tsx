@@ -3,19 +3,21 @@ import categoryFragrance from "@/assets/category-fragrance.jpg";
 import categoryMakeup from "@/assets/category-makeup.jpg";
 import categorySkincare from "@/assets/category-skincare.jpg";
 import categorySpa from "@/assets/category-spa.jpg";
+import categoryAccessories from "@/assets/category-accessories.jpg";
 
 const categories = [
   { label: "Fragrance", to: "/collection/fragrance", image: categoryFragrance },
   { label: "Makeup", to: "/collection/makeup", image: categoryMakeup },
   { label: "Skincare", to: "/collection/skincare", image: categorySkincare },
   { label: "Spa", to: "/collection/spa", image: categorySpa },
+  { label: "Accessories", to: "/collection/accessories", image: categoryAccessories },
 ];
 
 export const CategoryGrid = () => {
   return (
     <section className="bg-background">
       <div className="container mx-auto px-4 md:px-6 lg:px-12 py-8 md:py-12 lg:py-16">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
           {categories.map(cat => (
             <Link key={cat.label} to={cat.to} className="group text-center">
               <div className="aspect-square overflow-hidden rounded mb-3">

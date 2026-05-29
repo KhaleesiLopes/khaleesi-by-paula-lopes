@@ -8,6 +8,7 @@ import categoryFragrance from "@/assets/category-fragrance.jpg";
 import categoryMakeup from "@/assets/category-makeup.jpg";
 import categorySkincare from "@/assets/category-skincare.jpg";
 import categorySpa from "@/assets/category-spa.jpg";
+import categoryAccessories from "@/assets/category-accessories.jpg";
 
 interface CollectionMeta {
   title: string;
@@ -35,6 +36,11 @@ const collectionMeta: Record<string, CollectionMeta> = {
     title: "Spa",
     description: "Indulge in our curated spa collection for ultimate relaxation and renewal.",
     heroImage: categorySpa,
+  },
+  accessories: {
+    title: "Accessories",
+    description: "Thoughtfully curated lifestyle pieces — tumblers, candles, and everyday essentials to complement your ritual.",
+    heroImage: categoryAccessories,
   },
 };
 
