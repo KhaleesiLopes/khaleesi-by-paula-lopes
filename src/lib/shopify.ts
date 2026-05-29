@@ -103,7 +103,7 @@ export async function storefrontApiRequest(query: string, variables: Record<stri
 }
 
 export const STOREFRONT_PRODUCTS_QUERY = `
-  query GetProducts($first: Int!, $query: String) {
+  query GetProducts($first: Int!, $query: String, $country: CountryCode!) @inContext(country: $country) {
     products(first: $first, query: $query) {
       edges {
         node {
@@ -153,7 +153,7 @@ export const STOREFRONT_PRODUCTS_QUERY = `
 `;
 
 export const STOREFRONT_PRODUCT_BY_HANDLE_QUERY = `
-  query GetProductByHandle($handle: String!) {
+  query GetProductByHandle($handle: String!, $country: CountryCode!) @inContext(country: $country) {
     productByHandle(handle: $handle) {
       id
       title
@@ -198,6 +198,7 @@ export const STOREFRONT_PRODUCT_BY_HANDLE_QUERY = `
   }
 `;
 
+
 // Cart mutations
 export const CART_QUERY = `
   query cart($id: ID!) {
@@ -210,7 +211,7 @@ export const CART_QUERY = `
 `;
 
 export const CART_CREATE_MUTATION = `
-  mutation cartCreate($input: CartInput!) {
+  mutation cartCreate($input: CartInput!, $country: CountryCode!) @inContext(country: $country) {
     cartCreate(input: $input) {
       cart {
         id
@@ -285,9 +286,10 @@ function isCartNotFoundError(userErrors: Array<{ field: string[] | null; message
   return userErrors.some(e => e.message.toLowerCase().includes('cart not found') || e.message.toLowerCase().includes('does not exist'));
 }
 
-export async function createShopifyCart(item: { variantId: string; quantity: number }): Promise<{ cartId: string; checkoutUrl: string; lineId: string } | null> {
+export async function createShopifyCart(item: { variantId: string; quantity: number }, country = "GB"): Promise<{ cartId: string; checkoutUrl: string; lineId: string } | null> {
   const data = await storefrontApiRequest(CART_CREATE_MUTATION, {
     input: { lines: [{ quantity: item.quantity, merchandiseId: item.variantId }] },
+    country,
   });
 
   if (data?.data?.cartCreate?.userErrors?.length > 0) {

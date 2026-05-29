@@ -8,6 +8,7 @@ import { Footer } from "@/components/Footer";
 import { CartDrawer } from "@/components/CartDrawer";
 import { useCartSync } from "@/hooks/useCartSync";
 import { useCartStore } from "@/stores/cartStore";
+import { CurrencyProvider } from "@/contexts/CurrencyContext";
 import Index from "./pages/Index";
 import CollectionPage from "./pages/CollectionPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
@@ -61,7 +62,9 @@ const App = () => (
     <TooltipProvider>
       <Sonner />
       <BrowserRouter>
-        <AppContent />
+        <CurrencyProvider>
+          <AppContent />
+        </CurrencyProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

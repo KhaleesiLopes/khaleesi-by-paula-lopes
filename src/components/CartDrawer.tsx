@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { ShoppingBag, Minus, Plus, X, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { normalizeCheckoutUrl } from "@/lib/shopify";
+import { formatMoney } from "@/lib/money";
 
 interface CartDrawerProps {
   open: boolean;
@@ -15,8 +16,7 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
   const { items, isLoading, isSyncing, updateQuantity, removeItem, getCheckoutUrl, syncCart, clearCart } = useCartStore();
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
-
-  const formatCurrency = (amount: number) => `£${amount.toFixed(2)}`;
+  const cartCurrency = items[0]?.price.currencyCode || "GBP";
 
   useEffect(() => {
     if (open) syncCart();
@@ -151,7 +151,7 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
                           </div>
                           {/* Price */}
                           <p className="font-body text-sm font-medium text-foreground">
-                            {formatCurrency(parseFloat(item.price.amount) * item.quantity)}
+                            {formatMoney(parseFloat(item.price.amount) * item.quantity, item.price.currencyCode)}
                           </p>
                         </div>
                       </div>
@@ -165,7 +165,7 @@ export const CartDrawer = ({ open, onOpenChange }: CartDrawerProps) => {
                 <div className="flex justify-between items-baseline">
                   <span className="font-heading text-lg font-light">Subtotal</span>
                   <span className="font-heading text-xl font-medium">
-                    {formatCurrency(totalPrice)}
+                    {formatMoney(totalPrice, cartCurrency)}
                   </span>
                 </div>
                 <p className="font-body text-[11px] text-muted-foreground tracking-wide">

@@ -3,6 +3,8 @@ import { Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import type { ShopifyProduct } from "@/lib/shopify";
 import { getProductImageOverride } from "@/lib/productImageOverrides";
+import { formatMoney } from "@/lib/money";
+import { useCurrency } from "@/contexts/CurrencyContext";
 import { toast } from "sonner";
 
 interface ProductCardProps {
@@ -12,6 +14,7 @@ interface ProductCardProps {
 export const ProductCard = ({ product }: ProductCardProps) => {
   const addItem = useCartStore(state => state.addItem);
   const isLoading = useCartStore(state => state.isLoading);
+  const { country } = useCurrency();
   const { node } = product;
   const overrideImage = getProductImageOverride(node.title);
   const firstImage = node.images.edges[0]?.node;
@@ -31,7 +34,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       price: firstVariant.price,
       quantity: 1,
       selectedOptions: firstVariant.selectedOptions || [],
-    });
+    }, country);
 
     toast.success("Added to bag", {
       description: node.title,
@@ -93,7 +96,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           {node.title}
         </h3>
         <p className="font-body text-xs md:text-sm text-muted-foreground mb-3">
-          £{parseFloat(price.amount).toFixed(2)}
+          {formatMoney(price.amount, price.currencyCode)}
         </p>
 
         {/* Mobile Add to Bag — pushed to bottom */}

@@ -27,7 +27,7 @@ interface CartStore {
   checkoutUrl: string | null;
   isLoading: boolean;
   isSyncing: boolean;
-  addItem: (item: Omit<CartItem, 'lineId'>) => Promise<void>;
+  addItem: (item: Omit<CartItem, 'lineId'>, country?: string) => Promise<void>;
   updateQuantity: (variantId: string, quantity: number) => Promise<void>;
   removeItem: (variantId: string) => Promise<void>;
   clearCart: () => void;
@@ -44,14 +44,14 @@ export const useCartStore = create<CartStore>()(
       isLoading: false,
       isSyncing: false,
 
-      addItem: async (item) => {
+      addItem: async (item, country = 'GB') => {
         const { items, cartId, clearCart } = get();
         const existingItem = items.find(i => i.variantId === item.variantId);
 
         set({ isLoading: true });
         try {
           if (!cartId) {
-            const result = await createShopifyCart({ variantId: item.variantId, quantity: item.quantity });
+            const result = await createShopifyCart({ variantId: item.variantId, quantity: item.quantity }, country);
             if (result) {
               set({
                 cartId: result.cartId,
