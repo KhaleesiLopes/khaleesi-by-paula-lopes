@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ShoppingBag, User, Menu, X } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
+import { CurrencySwitcher } from "@/components/CurrencySwitcher";
 
 const navLinksLeft = [
   { label: "Home", to: "/" },
@@ -110,6 +111,7 @@ export const Header = ({ onCartOpen }: HeaderProps) => {
               </Link>
             ))}
             <div className="flex items-center gap-5 ml-6 pl-6 border-l border-border">
+              <CurrencySwitcher />
               <button
                 onClick={onCartOpen}
                 className="relative p-1 text-foreground hover:text-primary transition-colors"
