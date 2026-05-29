@@ -5,6 +5,8 @@ import { useCartStore } from "@/stores/cartStore";
 import { ProductCard } from "@/components/ProductCard";
 import { Loader2, Minus, Plus, ChevronLeft } from "lucide-react";
 import { toast } from "sonner";
+import { formatMoney } from "@/lib/money";
+import { useCurrency } from "@/contexts/CurrencyContext";
 
 const ProductDetailPage = () => {
   const { handle } = useParams<{ handle: string }>();
@@ -12,6 +14,7 @@ const ProductDetailPage = () => {
   const { data: relatedProducts } = useShopifyProducts(5);
   const addItem = useCartStore(state => state.addItem);
   const cartLoading = useCartStore(state => state.isLoading);
+  const { country } = useCurrency();
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -53,7 +56,7 @@ const ProductDetailPage = () => {
         price: selectedVariant.price,
         quantity: 1,
         selectedOptions: selectedVariant.selectedOptions || [],
-      });
+      }, country);
     }
     toast.success("Added to bag", { description: `${node.title} × ${quantity}`, position: "top-center" });
     setQuantity(1);
@@ -118,7 +121,7 @@ const ProductDetailPage = () => {
               {node.title}
             </h1>
             <p className="font-heading text-2xl font-light text-foreground mb-8">
-              £{parseFloat(selectedVariant?.price.amount || "0").toFixed(2)}
+              {selectedVariant ? formatMoney(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}
             </p>
 
             <div className="w-12 h-px bg-primary mb-8" />
